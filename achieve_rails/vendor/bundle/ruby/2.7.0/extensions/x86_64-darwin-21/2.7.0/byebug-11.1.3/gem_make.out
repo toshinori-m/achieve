@@ -1,0 +1,19 @@
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+/Users/matsumototoshinori/.rbenv/versions/2.7.6/bin/ruby -I /Users/matsumototoshinori/.rbenv/versions/2.7.6/lib/ruby/2.7.0 -r ./siteconf20220701-57839-1hpif2i.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20220701-57839-1itg4sy/byebug

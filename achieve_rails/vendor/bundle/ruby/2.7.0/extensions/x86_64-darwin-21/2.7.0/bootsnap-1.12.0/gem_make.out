@@ -1,0 +1,15 @@
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+/Users/matsumototoshinori/.rbenv/versions/2.7.6/bin/ruby -I /Users/matsumototoshinori/.rbenv/versions/2.7.6/lib/ruby/2.7.0 -r ./siteconf20220701-57839-g8bzhf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220701-57839-1snb1em/bootsnap
