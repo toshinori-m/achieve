@@ -9,7 +9,7 @@ class LikesController < ApplicationController
       render json: { message: '保存出来ませんでした', errors: like.errors.messages }, status: 400
     end
   end
-  
+
   def destroy
     like = Like.find(params[:id])
 

@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :likes, only: ['destroy']
-  resources :goals, only: ['create', 'index']
-  resources :threemonths_goals, only: ['create', 'index']
-  resources :monthly_goals, only: ['create', 'index']
-  resources :reports, only: ['new', 'create', 'index']
+  resources :goals, only: %w[create index]
+  resources :threemonths_goals, only: %w[create index]
+  resources :monthly_goals, only: %w[create index]
+  resources :reports, only: %w[new create index]
   # resources :guests, only: ['create']
   resources :guests, only: [:create]
 end

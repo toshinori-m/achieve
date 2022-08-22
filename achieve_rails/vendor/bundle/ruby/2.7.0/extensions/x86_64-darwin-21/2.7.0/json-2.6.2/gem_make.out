@@ -1,0 +1,13 @@
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/json-2.6.2/ext/json
+/Users/matsumototoshinori/.rbenv/versions/2.7.6/bin/ruby -I /Users/matsumototoshinori/.rbenv/versions/2.7.6/lib/ruby/2.7.0 -r ./siteconf20220822-2352-gz5hrx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/json-2.6.2/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/json-2.6.2/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/matsumototoshinori/environment/achieve/achieve_rails/vendor/bundle/ruby/2.7.0/gems/json-2.6.2/ext/json
+make "DESTDIR=" install

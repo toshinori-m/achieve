@@ -11,7 +11,7 @@ class GoalsController < ApplicationController
   end
 
   def index
-    goals = Goal.where("user_id = #{current_user.id}").order(id: "ASC").last(1)
+    goals = Goal.where("user_id = #{current_user.id}").order(id: 'ASC').last(1)
     goals_array = goals.map do |goal|
       {
         id: goal.id,
@@ -26,6 +26,7 @@ class GoalsController < ApplicationController
   end
 
   private
+
   def goals_params
     params.require(:goal).permit(:aim)
   end
