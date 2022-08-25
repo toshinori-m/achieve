@@ -1,0 +1,8 @@
+example_id                          | status | run_time        |
+----------------------------------- | ------ | --------------- |
+./spec/models/goal_spec.rb[1:1:1:1] | passed | 0.00295 seconds |
+./spec/models/goal_spec.rb[1:1:1:2] | passed | 0.003 seconds   |
+./spec/models/goal_spec.rb[1:1:2:1] | passed | 0.00463 seconds |
+./spec/models/goal_spec.rb[1:1:2:2] | passed | 0.00325 seconds |
+./spec/models/goal_spec.rb[1:1:2:3] | passed | 0.00286 seconds |
+./spec/models/goal_spec.rb[1:1:2:4] | passed | 0.01815 seconds |
