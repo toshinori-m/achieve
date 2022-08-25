@@ -79,7 +79,13 @@ GEM
       bcrypt (~> 3.0)
       devise (> 3.5.2, < 5)
       rails (>= 4.2.0, < 6.2)
+    diff-lcs (1.5.0)
     erubi (1.10.0)
+    factory_bot (5.2.0)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.2.0)
+      factory_bot (~> 5.2.0)
+      railties (>= 4.2.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -156,6 +162,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (5.1.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.11.0)
     rubocop (1.35.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -206,11 +229,13 @@ DEPENDENCIES
   byebug
   devise (~> 4.8, >= 4.8.1)
   devise_token_auth (~> 1.2)
+  factory_bot_rails (~> 5.0)
   listen (~> 3.3)
   pry-byebug
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.6)
+  rspec-rails
   rubocop
   rubocop-performance
   rubocop-rails
