@@ -6,6 +6,12 @@ example_id                                      | status | run_time        |
 ./spec/models/goal_spec.rb[1:1:2:2]             | passed | 0.00325 seconds |
 ./spec/models/goal_spec.rb[1:1:2:3]             | passed | 0.00286 seconds |
 ./spec/models/goal_spec.rb[1:1:2:4]             | passed | 0.01815 seconds |
+./spec/models/message_spec.rb[1:1:1:1]          | passed | 0.03202 seconds |
+./spec/models/message_spec.rb[1:1:1:2]          | passed | 0.00443 seconds |
+./spec/models/message_spec.rb[1:1:2:1]          | passed | 0.00368 seconds |
+./spec/models/message_spec.rb[1:1:2:2]          | passed | 0.0041 seconds  |
+./spec/models/message_spec.rb[1:1:2:3]          | passed | 0.0046 seconds  |
+./spec/models/message_spec.rb[1:1:2:4]          | passed | 0.004 seconds   |
 ./spec/models/monthly_goal_spec.rb[1:1:1:1]     | passed | 0.0028 seconds  |
 ./spec/models/monthly_goal_spec.rb[1:1:1:2]     | passed | 0.00277 seconds |
 ./spec/models/monthly_goal_spec.rb[1:1:2:1]     | passed | 0.00269 seconds |
