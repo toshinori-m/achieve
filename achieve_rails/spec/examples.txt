@@ -18,6 +18,12 @@ example_id                                      | status | run_time        |
 ./spec/models/monthly_goal_spec.rb[1:1:2:2]     | passed | 0.00299 seconds |
 ./spec/models/monthly_goal_spec.rb[1:1:2:3]     | passed | 0.01891 seconds |
 ./spec/models/monthly_goal_spec.rb[1:1:2:4]     | passed | 0.00323 seconds |
+./spec/models/report_spec.rb[1:1:1:1]           | passed | 0.02094 seconds |
+./spec/models/report_spec.rb[1:1:1:2]           | passed | 0.00371 seconds |
+./spec/models/report_spec.rb[1:1:2:1]           | passed | 0.00319 seconds |
+./spec/models/report_spec.rb[1:1:2:2]           | passed | 0.00337 seconds |
+./spec/models/report_spec.rb[1:1:2:3]           | passed | 0.00389 seconds |
+./spec/models/report_spec.rb[1:1:2:4]           | passed | 0.00341 seconds |
 ./spec/models/threemonths_goal_spec.rb[1:1:1:1] | passed | 0.02654 seconds |
 ./spec/models/threemonths_goal_spec.rb[1:1:1:2] | passed | 0.00339 seconds |
 ./spec/models/threemonths_goal_spec.rb[1:1:2:1] | passed | 0.00293 seconds |
