@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
   def create
     goals = Goal.new(aim: params[:aim], user_id: current_user.id)
     if goals.save
-      render json: { id: goals.id, message: '成功しました' }, status: :ok
+      render json: { id: goals.id, message: '成功しました' }, status: 200
     else
       render json: { message: '保存出来ませんでした', errors: goals.errors.messages }, status: :bad_request
     end
