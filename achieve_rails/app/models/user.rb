@@ -16,6 +16,4 @@ class User < ActiveRecord::Base
   validates :name, length: { maximum: 80 }
   validates :email, presence: true, length: { maximum: 90 }
   validates :email, uniqueness: true
-  validates :password, presence: true
-  validates :password, length: { minimum: 6 }
 end
