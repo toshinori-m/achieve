@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
 
-      it "すでに登録されている名前は保存できないこと" do
+      it "すでに登録されている名前なら無効" do
         FactoryBot.create(:user)
         user.valid?
         expect(user.errors[:name]).to include("has already been taken")
@@ -67,11 +67,15 @@ RSpec.describe User, type: :model do
         user.valid?
         expect(user).to_not be_valid
       end
-
+      
       it "すでに登録されているmailなら無効" do
-        FactoryBot.create(:user)
-        user.valid?
-        expect(user.errors[:email]).to include("has already been taken")
+        user1 = FactoryBot.create(:user)
+        user2 = FactoryBot.build(:user, email: user1.email)
+        user2.valid?
+        expect(user2.errors[:email]).to include('has already been taken')
+        # FactoryBot.create(:user)
+        # user.valid?
+        # expect(user.errors[:email]).to include("has already been taken")
       end
 
       it "passwordがnilなら無効" do
@@ -82,12 +86,6 @@ RSpec.describe User, type: :model do
 
       it "passwordが空白文字なら無効" do
         user.password = " "
-        user.valid?
-        expect(user).to_not be_valid
-      end
-
-      it "passwordが5文字なら無効" do
-        user.password = "a" * 5 + "@gamil.com"
         user.valid?
         expect(user).to_not be_valid
       end
