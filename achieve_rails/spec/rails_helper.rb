@@ -65,4 +65,5 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods 
   config.include AuthorizationHelper, type: :request
   # config.include AuthorizationSpecHelper, type: :request
+  # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 end
