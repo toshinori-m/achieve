@@ -45,4 +45,4 @@ example_id                                      | status | run_time        |
 ./spec/models/user_spec.rb[1:1:2:9]             | passed | 0.01596 seconds |
 ./spec/models/user_spec.rb[1:1:2:10]            | passed | 0.00273 seconds |
 ./spec/requests/goals_spec.rb[1:1:1]            | passed | 0.02907 seconds |
-./spec/requests/posts_spec.rb[1:1]              | failed | 0.04688 seconds |
+./spec/requests/posts_spec.rb[1:1]              | failed | 0.05747 seconds |
