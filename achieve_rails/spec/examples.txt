@@ -48,6 +48,10 @@ example_id                                      | status | run_time        |
 ./spec/requests/goals_spec.rb[1:1:2:1]          | passed | 0.06391 seconds |
 ./spec/requests/goals_spec.rb[1:2:1:1]          | passed | 0.02263 seconds |
 ./spec/requests/goals_spec.rb[1:2:2:1]          | passed | 0.01866 seconds |
+./spec/requests/monthly_goals_spec.rb[1:1:1:1]  | passed | 0.0191 seconds  |
+./spec/requests/monthly_goals_spec.rb[1:1:2:1]  | passed | 0.05304 seconds |
+./spec/requests/monthly_goals_spec.rb[1:2:1:1]  | passed | 0.02643 seconds |
+./spec/requests/monthly_goals_spec.rb[1:2:2:1]  | passed | 0.012 seconds   |
 ./spec/requests/posts_spec.rb[1:1:1]            | passed | 0.04346 seconds |
 ./spec/requests/posts_spec.rb[1:2:1]            | passed | 0.0207 seconds  |
 ./spec/requests/posts_spec.rb[1:2:2]            | passed | 0.01506 seconds |
