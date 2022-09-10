@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :goal do
     user_id { 1 }
-    aim { "フルマラソン完走するぞ！" }
+    aim { "test1" }
   end
 end
