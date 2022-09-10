@@ -13,6 +13,6 @@ class MessagesController < ApplicationController
         likes: message.likes.map { |like| { id: like.id, email: like.user.email } }
       }
     end
-    render json: messages_array, status: :ok
+    render json: messages_array, status: 200
   end
 end

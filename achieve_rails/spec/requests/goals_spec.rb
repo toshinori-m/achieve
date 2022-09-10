@@ -9,7 +9,7 @@ RSpec.describe "Goals", type: :request do
     context 'paramsの値が正しい場合作成成功' do
       it 'Goalを作成すると、Goalが追加される' do
         post '/auth/sign_in', params: { email: user.email, password: user.password }, headers: token
-        expect { Goal.create(aim: 'test', user_id: user.id) }.to change{Goal.count}.by(+1)
+        expect { Goal.create(aim: 'test', user_id: 'user.id') }.to change{Goal.count}.by(+1)
       end
     end
 
