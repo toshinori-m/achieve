@@ -15,9 +15,7 @@ RSpec.describe "Messages", type: :request do
         parsed_body = JSON.parse(response.body)
         expect(parsed_body.size).to eq 1
       end
-    end
-
-    context 'paramsの値が正しい場合表示成功' do
+      
       it 'Messageの特定の投稿を取得(status200 を返す)' do
         get'/messages#(message.id)',  headers: token
         post'/auth/sign_in', params: params, headers: token
