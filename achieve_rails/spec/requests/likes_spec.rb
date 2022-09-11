@@ -16,7 +16,7 @@ RSpec.describe "Likes", type: :request do
     end
     context 'paramsの値が正しくない場合作成失敗' do
       let(:params) { { user_id: nil, message_id: target_message.id } }
-      it 'Likeを作成愛用としても、Likeが追加出来ない' do
+      it 'Likeを作成しても、Likeが追加出来ない' do
         post '/auth/sign_in', params: { email: user.email, password: user.password }, headers: token
         expect { request }.to change{Like.count}.by(0)
       end
