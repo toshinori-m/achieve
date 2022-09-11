@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :message do
-    user_id { 1 }
-    content { "おはようございます" }
+    content { "test1" }
+    association :user
   end
 end
