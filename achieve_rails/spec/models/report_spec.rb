@@ -5,7 +5,7 @@ RSpec.describe Report, type: :model do
     before do
       @user = FactoryBot.create(:user)
     end
-
+    
     context 'Reportを保存できる' do
       it '正規のデータなら有効' do
         new_preset = FactoryBot.build(:report, user_id: @user.id)
@@ -19,12 +19,7 @@ RSpec.describe Report, type: :model do
         intensity_length = 'd' * 140
         point_length = 'e' * 250
         report_length = 'f' * 250
-        new_preset = FactoryBot.build(:report, location: location_length)
-        new_preset = FactoryBot.build(:report, time: time_length)
-        new_preset = FactoryBot.build(:report, condition: condition_length)
-        new_preset = FactoryBot.build(:report, intensity: intensity_length)
-        new_preset = FactoryBot.build(:report, point: point_length)
-        new_preset = FactoryBot.build(:report, report: report_length)
+        new_preset = FactoryBot.build(:report, location: location_length, time: time_length, condition: condition_length, intensity: intensity_length, point: point_length, report: report_length)
         expect(new_preset).to be_valid
       end
     end
@@ -36,22 +31,12 @@ RSpec.describe Report, type: :model do
       end
 
       it 'location,time,condition,intensity,point,reportがnilなら無効' do
-        new_preset = FactoryBot.build(:report, location: nil)
-        new_preset = FactoryBot.build(:report, time: nil)
-        new_preset = FactoryBot.build(:report, condition: nil)
-        new_preset = FactoryBot.build(:report, intensity: nil)
-        new_preset = FactoryBot.build(:report, point: nil)
-        new_preset = FactoryBot.build(:report, report: nil)
+        new_preset = FactoryBot.build(:report, location: nil, time: nil, condition: nil, intensity: nil, point: nil, report: nil)
         expect(new_preset).to_not be_valid
       end
 
       it 'location,time,condition,intensity,point,reportが空白文字なら無効' do
-        new_preset = FactoryBot.build(:report, location: " ")
-        new_preset = FactoryBot.build(:report, time: " ")
-        new_preset = FactoryBot.build(:report, condition: " ")
-        new_preset = FactoryBot.build(:report, intensity: " ")
-        new_preset = FactoryBot.build(:report, point: " ")
-        new_preset = FactoryBot.build(:report, report: " ")
+        new_preset = FactoryBot.build(:report, location: ' ', time: ' ', condition: ' ', intensity: ' ', point: ' ', report: ' ')
         expect(new_preset).to_not be_valid
       end
 
@@ -62,12 +47,7 @@ RSpec.describe Report, type: :model do
         intensity_length = 'd' * 141
         point_length = 'e' * 251
         report_length = 'f' * 251
-        new_preset = FactoryBot.build(:report, location: location_length)
-        new_preset = FactoryBot.build(:report, time: time_length)
-        new_preset = FactoryBot.build(:report, condition: condition_length)
-        new_preset = FactoryBot.build(:report, intensity: intensity_length)
-        new_preset = FactoryBot.build(:report, point: point_length)
-        new_preset = FactoryBot.build(:report, report: report_length)
+        new_preset = FactoryBot.build(:report, location: location_length, time: time_length, condition: condition_length, intensity: intensity_length, point: point_length, report: report_length)
         expect(new_preset).to_not be_valid
       end
     end

@@ -31,7 +31,7 @@ RSpec.describe Message, type: :model do
       end
 
       it 'contentが空白文字なら無効' do
-        new_preset = FactoryBot.build(:message, content: " ")
+        new_preset = FactoryBot.build(:message, content: ' ')
         expect(new_preset).to_not be_valid
       end
 

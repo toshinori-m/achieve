@@ -15,16 +15,16 @@ RSpec.describe User, type: :model do
       end
 
       it 'emailが80文字なら有効' do
-        user.email = 'a' * 80 + "@gamil.com"
+        user.email = 'a' * 80 + '@gamil.com'
         expect(user).to be_valid
       end
 
-      it "passwordが6文字なら有効" do
-        user.password = user.password_confirmation = "a" * 6
+      it 'passwordが6文字なら有効' do
+        user.password = user.password_confirmation = 'a' * 6
         expect(user).to be_valid
       end
     end
-    
+
     context 'userを保存できない' do
       it 'nameがnilなら無効' do
         user.name = nil
@@ -33,42 +33,42 @@ RSpec.describe User, type: :model do
       end
 
       it 'nameが空白文字なら無効' do
-        user.name = " "
+        user.name = ' '
         user.valid?
         expect(user).to_not be_valid
       end
 
-      it "nameが81文字なら無効" do
-        user.name = "a" * 81
+      it 'nameが81文字なら無効' do
+        user.name = 'a' * 81
         user.valid?
         expect(user).to_not be_valid
       end
 
-      it "すでに登録されている名前なら無効" do
+      it 'すでに登録されている名前なら無効' do
         FactoryBot.create(:user)
         user.valid?
-        expect(user.errors[:name]).to include("has already been taken")
+        expect(user.errors[:name]).to include('has already been taken')
       end
 
-      it "mailがnilなら無効" do
+      it 'mailがnilなら無効' do
         user.email = nil
         user.valid?
         expect(user).to_not be_valid
       end
 
-      it "emailが空白文字なら無効" do
-        user.email = " "
+      it 'emailが空白文字なら無効' do
+        user.email = ' '
         user.valid?
         expect(user).to_not be_valid
       end
 
-      it "emailが81文字なら無効" do
-        user.email = "a" * 91 + "@gamil.com"
+      it 'emailが81文字なら無効' do
+        user.email = 'a' * 91 + '@gamil.com'
         user.valid?
         expect(user).to_not be_valid
       end
-      
-      it "すでに登録されているmailなら無効" do
+
+      it 'すでに登録されているmailなら無効' do
         user1 = FactoryBot.create(:user)
         user2 = FactoryBot.build(:user, email: user1.email)
         user2.valid?
@@ -78,14 +78,14 @@ RSpec.describe User, type: :model do
         # expect(user.errors[:email]).to include("has already been taken")
       end
 
-      it "passwordがnilなら無効" do
+      it 'passwordがnilなら無効' do
         user.password = nil
         user.valid?
         expect(user).to_not be_valid
       end
 
-      it "passwordが空白文字なら無効" do
-        user.password = " "
+      it 'passwordが空白文字なら無効' do
+        user.password = ' '
         user.valid?
         expect(user).to_not be_valid
       end

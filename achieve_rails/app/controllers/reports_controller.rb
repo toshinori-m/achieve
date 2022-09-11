@@ -2,7 +2,8 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    reports = Report.new(report: params[:report], point: params[:point], location: params[:location], time: params[:time], condition: params[:condition], intensity: params[:intensity], datepicker_value: params[:datepicker_value], user_id: current_user.id)
+    reports = Report.new(report: params[:report], point: params[:point], location: params[:location],
+                         time: params[:time], condition: params[:condition], intensity: params[:intensity], datepicker_value: params[:datepicker_value], user_id: current_user.id)
     if reports.save
       render json: { id: reports.id, message: '成功しました' }, status: :ok
     else

@@ -31,7 +31,7 @@ RSpec.describe ThreemonthsGoal, type: :model do
       end
 
       it 'aimが空白文字なら無効' do
-        new_preset = FactoryBot.build(:threemonths_goal, aim: " ")
+        new_preset = FactoryBot.build(:threemonths_goal, aim: ' ')
         expect(new_preset).to_not be_valid
       end
 
