@@ -50,8 +50,11 @@ example_id                                      | status | run_time        |
 ./spec/models/user_spec.rb[1:1:2:8]             | passed | 0.0138 seconds  |
 ./spec/models/user_spec.rb[1:1:2:9]             | passed | 0.01596 seconds |
 ./spec/models/user_spec.rb[1:1:2:10]            | passed | 0.00273 seconds |
-./spec/requests/goals_spec.rb[1:1:1:1]          | passed | 0.02869 seconds |
-./spec/requests/goals_spec.rb[1:1:2:1]          | passed | 0.03676 seconds |
+./spec/requests/goals_spec.rb[1:1:1:1]          | passed | 0.02319 seconds |
+./spec/requests/goals_spec.rb[1:1:2:1]          | passed | 0.01943 seconds |
+./spec/requests/goals_spec.rb[1:2:1:1]          | passed | 0.07351 seconds |
+./spec/requests/goals_spec.rb[1:2:1:2]          | passed | 0.02123 seconds |
+./spec/requests/goals_spec.rb[1:2:2:1]          | passed | 0.01382 seconds |
 ./spec/requests/likes_spec.rb[1:1:1:1]          | passed | 0.02192 seconds |
 ./spec/requests/likes_spec.rb[1:1:2:1]          | passed | 0.03268 seconds |
 ./spec/requests/likes_spec.rb[1:2:1:1]          | passed | 0.00899 seconds |

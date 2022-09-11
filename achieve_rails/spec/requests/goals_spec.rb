@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Goals", type: :request do
-  let!(:user) { User.create(name: 'example', email: 'test1@example.com', password: 'password') }
+  let!(:user) { create(:user) }
+  let!(:goal) { create(:goal) }
   let(:token) { sign_in user }
   let(:params) { { email: user.email, password: user.password } }
 
@@ -23,14 +24,26 @@ RSpec.describe "Goals", type: :request do
 
   describe 'goal /# index' do
     context 'paramsの値が正しい場合表示成功' do
-      it 'Goalの新しい目標を取得(status200 を返す)' do
+      it 'Goalの一覧の値を取得(status200 を返す)' do
+        get'/goals',  headers: token
         post '/auth/sign_in', params: params, headers: token
         expect(response.status).to eq (200)
+        parsed_body = JSON.parse(response.body)
+        expect(parsed_body.size).to eq 1
+      end
+
+      it 'Goalの特定の値を取得(status200 を返す)' do
+        get'/goals#(goal.id)',  headers: token
+        post'/auth/sign_in', params: params, headers: token
+        expect(response.status).to eq (200)
+        parsed_body = JSON.parse(response.body)
+        expect(parsed_body["data"]["id"]).to eq goal.id
       end
     end
     
     context 'paramsの値が正しくない場合表示失敗' do
       it 'Goalの目標を取得出来ない(status401 を返す)' do
+        get'/goals'
         post '/auth/sign_in', params: { email: '', password: '' }
         expect(response.status).to eq (401)
       end
