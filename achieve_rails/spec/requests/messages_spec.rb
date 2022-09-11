@@ -24,6 +24,14 @@ RSpec.describe "Messages", type: :request do
         expect(parsed_body["data"]["id"]).to eq message.id
       end
     end
+
+    context 'Messageの値が正しくない場合表示失敗' do
+      it 'Goalの目標を取得出来ない(status401 を返す)' do
+        get'/messages'
+        post '/auth/sign_in', params: { email: '', password: '' }
+        expect(response.status).to eq (401)
+      end
+    end
   end
 end
 

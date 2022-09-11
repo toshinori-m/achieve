@@ -59,8 +59,9 @@ example_id                                      | status | run_time        |
 ./spec/requests/likes_spec.rb[1:1:2:1]          | passed | 0.02241 seconds |
 ./spec/requests/likes_spec.rb[1:2:1:1]          | passed | 0.0435 seconds  |
 ./spec/requests/likes_spec.rb[1:2:1:2]          | passed | 0.0307 seconds  |
-./spec/requests/messages_spec.rb[1:1:1:1]       | passed | 0.02418 seconds |
-./spec/requests/messages_spec.rb[1:1:2:1]       | passed | 0.06757 seconds |
+./spec/requests/messages_spec.rb[1:1:1:1]       | passed | 0.06799 seconds |
+./spec/requests/messages_spec.rb[1:1:1:2]       | passed | 0.0243 seconds  |
+./spec/requests/messages_spec.rb[1:1:2:1]       | passed | 0.01681 seconds |
 ./spec/requests/monthly_goals_spec.rb[1:1:1:1]  | passed | 0.06518 seconds |
 ./spec/requests/monthly_goals_spec.rb[1:1:2:1]  | passed | 0.01981 seconds |
 ./spec/requests/monthly_goals_spec.rb[1:2:1:1]  | passed | 0.0231 seconds  |
