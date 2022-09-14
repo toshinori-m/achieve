@@ -85,4 +85,4 @@ example_id                                         | status | run_time        |
 ./spec/requests/threemonths_goals_spec.rb[1:2:1:1] | passed | 0.06718 seconds |
 ./spec/requests/threemonths_goals_spec.rb[1:2:1:2] | passed | 0.02724 seconds |
 ./spec/requests/threemonths_goals_spec.rb[1:2:2:1] | passed | 0.01329 seconds |
-./spec/system/posts_create_spec.rb[1:1:1:1]        | failed | 4.75 seconds    |
+./spec/system/posts_create_spec.rb[1:1:1]          | failed | 4.74 seconds    |
