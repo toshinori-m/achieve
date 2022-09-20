@@ -1,18 +1,10 @@
 import { mount } from '@vue/test-utils'
+import TodoApp from '../src/components/TodoApp.vue'
 
-// The component to test
-const MessageComponent = {
-  template: '<p>{{ msg }}</p>',
-  props: ['msg']
-}
+test('renders a todo', () => {
+  const wrapper = mount(TodoApp)
 
-test('displays message', () => {
-  const wrapper = mount(MessageComponent, {
-    props: {
-      msg: 'Hello world'
-    }
-  })
+  const todo = wrapper.get('[data-test="todo"]')
 
-  // Assert the rendered text of the component
-  expect(wrapper.text()).toContain('Hello world')
+  expect(todo.text()).toBe('Learn Vue.js 3')
 })
