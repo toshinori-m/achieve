@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "test": "jest"
   },
@@ -28,7 +29,7 @@
     "@babel/eslint-parser": "^7.12.16",
     "@babel/preset-env": "^7.19.1",
     "@testing-library/vue": "^6.4.2",
-    "@types/jest": "^29.0.3",
+    "@types/jest": "27",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
@@ -39,12 +40,11 @@
     "babel-jest": "^29.0.3",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "jest": "26",
-    "jest-environment-jsdom": "^29.0.3",
+    "jest": "27",
+    "jest-environment-jsdom": "27",
     "jest-jasmine2": "^29.0.3",
-    "ts-jest": "26",
-    "typescript": "^4.8.3",
-    "vue-jest": "^5.0.0-alpha.10"
+    "ts-jest": "27",
+    "typescript": "^4.8.3"
   },
   "eslintConfig": {
     "root": true,

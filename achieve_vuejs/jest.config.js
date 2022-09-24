@@ -1,4 +1,5 @@
 module.exports = {
+  preset: "@vue/cli-plugin-unit-jest/presets/typescript",
   "roots": [
     "<rootDir>/src"
   ],
@@ -8,6 +9,9 @@ module.exports = {
   ],
   "transform": {
     "^.+\\.(ts|tsx)$": "ts-jest",
-    "^.+\\.vue$": "vue-jest"
+    "^.+\\.vue$": "@vue/vue3-jest",
+  },
+  testEnvironmentOptions: {
+    customExportConditions: ["node", "node-addons"],
   }
 }
