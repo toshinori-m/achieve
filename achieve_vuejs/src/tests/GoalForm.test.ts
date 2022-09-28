@@ -46,10 +46,12 @@ describe('Goal.vue', () => {
   it('クリック時に$route.pushが実行される', () => {
     const mockRouterPush = jest.fn();
     const app_mount = mount(Goal, {
-      mocks: {
-        $router: {
-          push: mockRouterPush
-        },
+      global: {
+        mocks: {
+          $router: {
+            push: mockRouterPush
+          },
+        }
       }
     });
     expect(mockRouterPush.mock.calls.length).toBe(0);
@@ -60,19 +62,17 @@ describe('Goal.vue', () => {
   it('$route.pushの引数が正しい', () => {
     const mockRouterPush = jest.fn();
     const app_mount = mount(Goal, {
-      mocks: {
-        $router: {
-          push: mockRouterPush
-        },
+      global: {
+        mocks: {
+          $router: {
+            push: mockRouterPush
+          },
+        }
       }
     });
-    // // const test_word = 'test-word'
-    // app_mount.find('button').trigger('submit');
-    // expect(mockRouterPush).toHaveBeenCalledWith({
-    //   name: 'GoalPage',
-    //   // params: {
-    //   //   word: test_word
-    //   // }
-    // });
+    app_mount.find('button').trigger('submit');
+    expect(mockRouterPush).toHaveBeenCalledWith({
+      name: 'GoalPage'
+    });
   });
 });
