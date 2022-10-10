@@ -44,12 +44,6 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
 
-      it 'すでに登録されている名前なら無効' do
-        FactoryBot.create(:user)
-        user.valid?
-        expect(user.errors[:name]).to include('has already been taken')
-      end
-
       it 'mailがnilなら無効' do
         user.email = nil
         user.valid?

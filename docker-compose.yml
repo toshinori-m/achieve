@@ -1,0 +1,42 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    platform: linux/x86_64/v8
+  achieve_rails:
+    build:
+      context: ./achieve_rails/
+      dockerfile: Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./achieve_rails:/myapp
+    environment:
+      TZ: Asia/Tokyo
+      RAILS_ENV: development
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  achieve_vuejs:
+    build: 
+      context: ./achieve_vuejs/
+      dockerfile: Dockerfile
+    volumes:
+      - ./achieve_vuejs:/usr/src
+    command: yarn run serve
+    ports:
+      - 8080-8081:8080
+    depends_on:
+      - achieve_rails
+    stdin_open: true
+    tty: true
+volumes:
+  mysql-data:
