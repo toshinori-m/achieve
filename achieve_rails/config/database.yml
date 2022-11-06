@@ -8,9 +8,9 @@ default: &default
   adapter: sqlite3
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
+  username: <%= ENV['DB_USER'] %>
   password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
-  host: db
+  host: <%= ENV['DB_HOST'] %>
   timeout: 5000
 
 development:

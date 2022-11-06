@@ -21,6 +21,9 @@ services:
     environment:
       TZ: Asia/Tokyo
       RAILS_ENV: development
+      DB_HOST: db
+      DB_USER: root
+      # MYSQL_ROOT_PASSWORD:
     ports:
       - "3000:3000"
     depends_on:
