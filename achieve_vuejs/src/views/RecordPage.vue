@@ -26,7 +26,7 @@
     methods: {
       async getRecord () {
         try {
-          const res = await axios.get('http://localhost:3000/reports', {
+          const res = await axios.get('achieve_rails:3000/reports', {
             headers: getItem
           })
           if (!res) {

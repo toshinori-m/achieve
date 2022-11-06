@@ -24,7 +24,7 @@
     methods: {
       async getGoal () {
         try {
-          const res = await axios.get('http://localhost:3000/goals', {
+          const res = await axios.get('achieve_rails:3000/goals', {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

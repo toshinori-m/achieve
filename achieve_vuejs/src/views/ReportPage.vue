@@ -54,7 +54,7 @@
     methods: {
       async reports() {
         try {
-          const res = await axios.post('http://localhost:3000/reports', {
+          const res = await axios.post('achieve_rails:3000/reports', {
             datepicker_value: this.datepicker_value,
             location: this.location, 
             time: this.time, 

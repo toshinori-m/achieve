@@ -35,7 +35,7 @@ export default {
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get('http://localhost:3000/messages', {
+        const res = await axios.get('achieve_rails:3000/messages', {
           headers: getItem
         })
         if (!res) {
@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    const cable = ActionCable.createConsumer('ws://localhost:3000/cable')
+    const cable = ActionCable.createConsumer('ws://achieve_rails:3000/cable')
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
         this.getMessages().then(() => {

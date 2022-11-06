@@ -22,7 +22,7 @@ export default {
   methods: {
     async monthly_goal() {
       try {
-        const res = await axios.post('http://localhost:3000/monthly_goals',  {
+        const res = await axios.post('achieve_rails:3000/monthly_goals',  {
           aim: this.aim,
           'access-token': localStorage.getItem('access-token'),
           client: localStorage.getItem('client'),

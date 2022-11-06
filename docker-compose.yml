@@ -1,16 +1,16 @@
 version: "3"
 services:
-  # db:
-  #   image: mysql:8.0.29
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: password
-  #   command: --default-authentication-plugin=mysql_native_password
-  #   volumes:
-  #     - mysql-data:/var/lib/mysql
-  #   ports:
-  #     - 3306:3306
-  #   platform: linux/x86_64/v8
+  db:
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    platform: linux/x86_64/v8
   achieve_rails:
     build:
       context: ./achieve_rails/
@@ -23,8 +23,8 @@ services:
       RAILS_ENV: development
     ports:
       - "3000:3000"
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
   achieve_vuejs:
     build: 
       context: ./achieve_vuejs/
