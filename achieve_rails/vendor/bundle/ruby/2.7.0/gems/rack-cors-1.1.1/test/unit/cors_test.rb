@@ -119,7 +119,7 @@ describe Rack::Cors do
   end
 
   it 'should support alternative X-Origin header' do
-    header 'X-Origin', 'http://localhost:3000'
+    header 'X-Origin', 'http://52.197.190.81:3000'
     get '/'
     last_response.must_render_cors_success
   end
@@ -147,7 +147,7 @@ describe Rack::Cors do
   end
 
   it "decode URL and resolve paths before resource matching" do
-    header 'Origin', 'http://localhost:3000'
+    header 'Origin', 'http://52.197.190.81:3000'
     get '/public/a/..%2F..%2Fprivate/stuff'
     last_response.wont_render_cors_success
   end
@@ -296,7 +296,7 @@ describe Rack::Cors do
     end
 
     it 'should fail if Access-Control-Request-Method is not allowed' do
-      preflight_request('http://localhost:3000', '/get-only', :method => :post)
+      preflight_request('http://52.197.190.81:3000', '/get-only', :method => :post)
       last_response.wont_render_cors_success
       cors_result.miss_reason.must_equal Rack::Cors::Result::MISS_DENY_METHOD
       cors_result.wont_be :hit
@@ -304,7 +304,7 @@ describe Rack::Cors do
     end
 
     it 'should fail if header is not allowed' do
-      preflight_request('http://localhost:3000', '/single_header', :headers => 'Fooey')
+      preflight_request('http://52.197.190.81:3000', '/single_header', :headers => 'Fooey')
       last_response.wont_render_cors_success
       cors_result.miss_reason.must_equal Rack::Cors::Result::MISS_DENY_HEADER
       cors_result.wont_be :hit
@@ -312,32 +312,32 @@ describe Rack::Cors do
     end
 
     it 'should allow any header if headers = :any' do
-      preflight_request('http://localhost:3000', '/', :headers => 'Fooey')
+      preflight_request('http://52.197.190.81:3000', '/', :headers => 'Fooey')
       last_response.must_render_cors_success
     end
 
     it 'should allow any method if methods = :any' do
-      preflight_request('http://localhost:3000', '/', :methods => :any)
+      preflight_request('http://52.197.190.81:3000', '/', :methods => :any)
       last_response.must_render_cors_success
     end
 
     it 'allows PATCH method' do
-      preflight_request('http://localhost:3000', '/', :methods => [ :patch ])
+      preflight_request('http://52.197.190.81:3000', '/', :methods => [ :patch ])
       last_response.must_render_cors_success
     end
 
     it 'should allow header case insensitive match' do
-      preflight_request('http://localhost:3000', '/single_header', :headers => 'X-Domain-Token')
+      preflight_request('http://52.197.190.81:3000', '/single_header', :headers => 'X-Domain-Token')
       last_response.must_render_cors_success
     end
 
     it 'should allow multiple headers match' do
       # Webkit style
-      preflight_request('http://localhost:3000', '/two_headers', :headers => 'X-Requested-With, X-Domain-Token')
+      preflight_request('http://52.197.190.81:3000', '/two_headers', :headers => 'X-Requested-With, X-Domain-Token')
       last_response.must_render_cors_success
 
       # Gecko style
-      preflight_request('http://localhost:3000', '/two_headers', :headers => 'x-requested-with,x-domain-token')
+      preflight_request('http://52.197.190.81:3000', '/two_headers', :headers => 'x-requested-with,x-domain-token')
       last_response.must_render_cors_success
     end
 
@@ -348,13 +348,13 @@ describe Rack::Cors do
     end
 
     it "should allow '/<path>/' resource if match pattern is /<path>/*" do
-      preflight_request('http://localhost:3000', '/wildcard/')
+      preflight_request('http://52.197.190.81:3000', '/wildcard/')
       last_response.must_render_cors_success
       last_response.headers['Access-Control-Allow-Origin'].wont_equal nil
     end
 
     it "should allow '/<path>' resource if match pattern is /<path>/*" do
-      preflight_request('http://localhost:3000', '/wildcard')
+      preflight_request('http://52.197.190.81:3000', '/wildcard')
       last_response.must_render_cors_success
       last_response.headers['Access-Control-Allow-Origin'].wont_equal nil
     end
@@ -473,7 +473,7 @@ describe Rack::Cors do
     end
 
     it 'should succeed with CORS simple headers' do
-      preflight_request('http://localhost:3000', '/', :headers => 'Accept')
+      preflight_request('http://52.197.190.81:3000', '/', :headers => 'Accept')
       last_response.must_render_cors_success
     end
   end
@@ -494,13 +494,13 @@ describe Rack::Cors do
     end
 
     it 'should succeed with CORS simple headers' do
-      preflight_request('http://localhost:3000', '/', :headers => 'Accept')
+      preflight_request('http://52.197.190.81:3000', '/', :headers => 'Accept')
       last_response.must_render_cors_success
-      preflight_request('http://localhost:3000', '/', :headers => 'Accept-Language')
+      preflight_request('http://52.197.190.81:3000', '/', :headers => 'Accept-Language')
       last_response.must_render_cors_success
-      preflight_request('http://localhost:3000', '/', :headers => 'Content-Type')
+      preflight_request('http://52.197.190.81:3000', '/', :headers => 'Content-Type')
       last_response.must_render_cors_success
-      preflight_request('http://localhost:3000', '/', :headers => 'Content-Language')
+      preflight_request('http://52.197.190.81:3000', '/', :headers => 'Content-Language')
       last_response.must_render_cors_success
     end
   end
@@ -509,7 +509,7 @@ describe Rack::Cors do
     def cors_request(*args)
       path = args.first.is_a?(String) ? args.first : '/'
 
-      opts = { :method => :get, :origin => 'http://localhost:3000' }
+      opts = { :method => :get, :origin => 'http://52.197.190.81:3000' }
       opts.merge! args.last if args.last.is_a?(Hash)
 
       header 'Origin', opts[:origin]

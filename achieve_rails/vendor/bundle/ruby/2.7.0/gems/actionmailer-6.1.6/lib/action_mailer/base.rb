@@ -361,7 +361,7 @@ module ActionMailer
   #
   #   config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
   #
-  # An overview of all previews is accessible at <tt>http://localhost:3000/rails/mailers</tt>
+  # An overview of all previews is accessible at <tt>http://52.197.190.81:3000/rails/mailers</tt>
   # on a running development server instance.
   #
   # Previews can also be intercepted in a similar manner as deliveries can be by registering

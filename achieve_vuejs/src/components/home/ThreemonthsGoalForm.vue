@@ -35,7 +35,7 @@ export default {
   methods: {
     async getThreemonthsGoal () {
       try {
-        const res = await axios.get('achieve_rails:3000/threemonths_goals', {
+        const res = await axios.get('http://52.197.190.81:3000/threemonths_goals', {
           headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

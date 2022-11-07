@@ -24,7 +24,7 @@
     methods: {
       async getMonthlyGoal () {
         try {
-          const res = await axios.get('achieve_rails:3000/monthly_goals', {
+          const res = await axios.get('http://52.197.190.81:3000/monthly_goals', {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

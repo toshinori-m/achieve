@@ -72,7 +72,7 @@ and may also be used independently outside Rails.
 
    Run with `--help` or `-h` for options.
 
-4. Go to `http://localhost:3000` and you'll see:
+4. Go to `http://52.197.190.81:3000` and you'll see:
 "Yay! You’re on Rails!"
 
 5. Follow the guidelines to start developing your application. You may find
