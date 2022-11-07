@@ -18,7 +18,7 @@ describe Rack::Cors, 'DSL' do
     resources = cors.send :all_resources
 
     resources.length.must_equal 1
-    resources.first.allow_origin?('http://52.197.190.81:3000').must_equal true
+    resources.first.allow_origin?('http://localhost:3000').must_equal true
     resources.first.allow_origin?('http://10.10.10.10:3000',{"USER_AGENT" => "test-agent" }).must_equal true
     resources.first.allow_origin?('http://10.10.10.10:3001',{"USER_AGENT" => "test-agent" }).wont_equal true
     resources.first.allow_origin?('http://10.10.10.10:3000',{"USER_AGENT" => "other-agent"}).wont_equal true
@@ -38,7 +38,7 @@ describe Rack::Cors, 'DSL' do
     resources = cors.send :all_resources
 
     resources.length.must_equal 1
-    resources.first.allow_origin?('http://52.197.190.81:3000').must_equal true
+    resources.first.allow_origin?('http://localhost:3000').must_equal true
     resources.first.allow_origin?('http://10.10.10.10:3000',{"USER_AGENT" => "test-agent" }).must_equal true
     resources.first.allow_origin?('http://10.10.10.10:3001',{"USER_AGENT" => "test-agent" }).wont_equal true
     resources.first.allow_origin?('http://10.10.10.10:3000',{"USER_AGENT" => "other-agent"}).wont_equal true

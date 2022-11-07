@@ -72,7 +72,7 @@ and may also be used independently outside \Rails.
 
    Run with <tt>--help</tt> or <tt>-h</tt> for options.
 
-4. Go to <tt>http://52.197.190.81:3000</tt> and you'll see: "Yay! You’re on \Rails!"
+4. Go to <tt>http://localhost:3000</tt> and you'll see: "Yay! You’re on \Rails!"
 
 5. Follow the guidelines to start developing your application. You may find the following resources handy:
 

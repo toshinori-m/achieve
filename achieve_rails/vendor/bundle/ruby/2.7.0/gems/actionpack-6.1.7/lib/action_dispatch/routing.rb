@@ -138,7 +138,7 @@ module ActionDispatch
   #     day:        /\d{1,2}/
   #   }
   #
-  # Using the route above, the URL "http://52.197.190.81:3000/articles/2005/11/06"
+  # Using the route above, the URL "http://localhost:3000/articles/2005/11/06"
   # maps to
   #
   #   params = {year: '2005', month: '11', day: '06'}
