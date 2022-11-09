@@ -34,7 +34,7 @@ export default {
     async login() {
       try {
         this.error = null
-        const res = await axios.post('http://52.197.190.81:3000/auth/sign_in', {
+        const res = await axios.post('http://54.65.83.225:3000/auth/sign_in', {
           email: this.email,
           password: this.password,
           }
@@ -55,7 +55,7 @@ export default {
     },
     async loginWithGestUser() {
       this.error = null
-      const res = await axios.post('http://52.197.190.81:3000/auth/sign_in', {
+      const res = await axios.post('http://54.65.83.225:3000/auth/sign_in', {
         email: 'guest@example.com',
         password: 'guests',
         }

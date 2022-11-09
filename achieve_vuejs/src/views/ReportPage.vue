@@ -54,7 +54,7 @@
     methods: {
       async reports() {
         try {
-          const res = await axios.post('http://52.197.190.81:3000/reports', {
+          const res = await axios.post('http://54.65.83.225:3000/reports', {
             datepicker_value: this.datepicker_value,
             location: this.location, 
             time: this.time, 

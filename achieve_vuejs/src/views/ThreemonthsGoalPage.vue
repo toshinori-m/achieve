@@ -30,7 +30,7 @@ export default {
   methods: {
     async threemonths_goal() {
       try {
-        const res = await axios.post('http://52.197.190.81:3000/threemonths_goals', {
+        const res = await axios.post('http://54.65.83.225:3000/threemonths_goals', {
           aim_1: this.aim_1,
           aim_2: this.aim_2, 
           aim_3: this.aim_3, 
