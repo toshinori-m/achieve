@@ -22,7 +22,7 @@ export default {
   methods: {
     async monthly_goal() {
       try {
-        const res = await axios.post('http://54.65.83.225:3000/monthly_goals',  {
+        const res = await axios.post('http://54.238.158.136:3000/monthly_goals',  {
           aim: this.aim,
           'access-token': localStorage.getItem('access-token'),
           client: localStorage.getItem('client'),
