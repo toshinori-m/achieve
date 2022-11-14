@@ -39,7 +39,7 @@ export default {
     async signUp () {
       this.error = null
       try {
-        const res = await axios.post('http://54.238.158.136:3000/auth', {
+        const res = await axios.post('http://54.65.83.225:3000/auth', {
           name: this.name,
           email: this.email,
           password: this.password,
@@ -64,7 +64,7 @@ export default {
       try {
         const ecrypted_value = crypto.AES.encrypt('name', 'guest')
         const ecrypted_pass = crypto.AES.encrypt('name', 'password')
-        const res = await axios.post('http://54.238.158.136:3000/auth', {
+        const res = await axios.post('http://54.65.83.225:3000/auth', {
           name: ecrypted_value.toString(),
           email: ecrypted_value.toString() + "@guest.com",
           password: ecrypted_pass.toString(),

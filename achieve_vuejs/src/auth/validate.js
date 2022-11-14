@@ -10,7 +10,7 @@ const validate = async () => {
   const accessToken = window.localStorage.getItem('access-token')
 
   try {
-    const res = await axios.get('http://54.238.158.136:3000/auth/validate_token', {
+    const res = await axios.get('http://54.65.83.225:3000/auth/validate_token', {
       headers: {
         uid: uid,
         'access-token': accessToken,

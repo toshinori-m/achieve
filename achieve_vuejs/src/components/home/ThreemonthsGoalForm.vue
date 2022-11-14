@@ -35,16 +35,17 @@ export default {
   methods: {
     async getThreemonthsGoal () {
       try {
-        const res = await axios.get('http://54.238.158.136:3000/threemonths_goals', {
+        const res = await axios.get('http://54.65.83.225:3000/threemonths_goals', {
           headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
             client: window.localStorage.getItem('client')
             }
         })
-        if (!res) {
-          new Error('取得できませんでした')
+        if (res.data.length === 0){
+          this.error = '３ヶ月毎の目標を表示できませんでした。上の３ヶ月毎の釦をにて標的を入力して下さい。'
         }
+        console.log({ res })
         this.threemonths_goals = res.data
       } catch (error) {
       console.log({ error })

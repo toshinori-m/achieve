@@ -42,7 +42,7 @@ export default {
     },
     async createLike (messageId) {
       try {
-        const res = await axios.post(`http://54.238.158.136:3000/messages/${messageId}/likes`, {},
+        const res = await axios.post(`http://54.65.83.225:3000/messages/${messageId}/likes`, {},
           {
             headers: {
               uid: this.uid,
@@ -61,7 +61,7 @@ export default {
     },
     async deleteLike(likeId) {
       try {
-        const res = await axios.delete(`http://54.238.158.136:3000/likes/${likeId}`,
+        const res = await axios.delete(`http://54.65.83.225:3000/likes/${likeId}`,
           {
             headers: {
               uid: this.uid,

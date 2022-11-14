@@ -24,19 +24,19 @@
     methods: {
       async getGoal () {
         try {
-          const res = await axios.get('http://54.238.158.136:3000/goals', {
+          const res = await axios.get('http://54.65.83.225:3000/goals', {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
             client: window.localStorage.getItem('client')
             }
           })
-          if (!res) {
-            new Error('取得できませんでした')
+          if (res.data.length === 0){
+            this.error = '今期目標を表示できませんでした。上の今期目標の釦にて目標を入力して下さい。'
           }
+          console.log({ res })
           this.goals = res.data
         } catch (error) {
-        console.log({ error })
         this.error = '今期目標を表示できませんでした。上の今期目標の釦にて目標を入力して下さい。'
         }
       },

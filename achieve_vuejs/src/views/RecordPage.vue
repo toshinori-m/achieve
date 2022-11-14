@@ -10,29 +10,36 @@
       <p class="point">練習内容 = {{ record.point }}</p>
       <p class="report">感想 = {{ record.report }}</p>
     </div>
+    <div class="error">{{ error }}</div>
   </div>
 </template>
 <script>
   import axios from 'axios'
-  import getItem from '../auth/getItem'
+  // import getItem from '../auth/getItem'
 
   export default {
     name: "recordFrom",
     data () {
       return {
-        records: ""
+        records: "",
+        error: null
       }
     },
     methods: {
       async getRecord () {
         try {
-          const res = await axios.get('http://54.238.158.136:3000/reports', {
-            headers: getItem
+          const res = await axios.get('http://54.65.83.225:3000/reports', {
+            headers: {
+            uid: window.localStorage.getItem('uid'),
+            "access-token": window.localStorage.getItem('access-token'),
+            client: window.localStorage.getItem('client')
+            }
           })
-          if (!res) {
-            new Error('取得できませんでした')
+          if (res.data.length === 0){
+            this.error = '１０日間の記録を表示できませんでした。毎日の記録を入力して下さい。'
           }
-          this.records = res.data
+          console.log({ res })
+          this.goals = res.data
         } catch (error) {
         console.log({ error })
         this.error = 'recordを表示できませんでした'
