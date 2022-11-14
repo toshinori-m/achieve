@@ -24,7 +24,7 @@
     methods: {
       async getGoal () {
         try {
-          const res = await axios.get('http://54.65.83.225:3000/goals', {
+          const res = await axios.get('http://54.238.158.136:3000/goals', {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
