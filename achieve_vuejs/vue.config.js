@@ -1,13 +1,10 @@
-devServer: {
-  disableHostCheck: true
-  }
-  
-  module.exports = defineConfig({
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
-  disableHostCheck: true
+    allowedHosts: 'all',
   },
   configureWebpack: {
-  watch: true
+    watch: true
   }
-  })
+})
