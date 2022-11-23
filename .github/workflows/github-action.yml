@@ -24,7 +24,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: default
+          ruby-version: .ruby-version
 
       - name: Cache node modules
         uses: actions/cache@v2
