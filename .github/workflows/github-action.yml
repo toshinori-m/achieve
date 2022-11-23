@@ -22,9 +22,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v2
         with:
-          ruby-version: .ruby-version
+          ruby-version: default
 
       - name: Cache node modules
         uses: actions/cache@v2
