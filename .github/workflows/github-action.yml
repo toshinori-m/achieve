@@ -21,10 +21,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Ruby 2.6
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.8
+          ruby-version: default
 
       - name: Cache node modules
         uses: actions/cache@v2
