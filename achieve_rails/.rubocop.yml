@@ -128,3 +128,4 @@ Style/StringLiterals:
 # URISchemes: http, https
 Layout/LineLength:
   Max: 194
+

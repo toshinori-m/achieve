@@ -1,10 +1,10 @@
 example_id                                         | status | run_time        |
 -------------------------------------------------- | ------ | --------------- |
-./spec/requests/goals_spec.rb[1:1:1:1]             | passed | 0.01684 seconds |
-./spec/requests/goals_spec.rb[1:1:2:1]             | passed | 0.02398 seconds |
-./spec/requests/goals_spec.rb[1:2:1:1]             | passed | 0.01899 seconds |
-./spec/requests/goals_spec.rb[1:2:1:2]             | passed | 0.01868 seconds |
-./spec/requests/goals_spec.rb[1:2:2:1]             | passed | 0.03991 seconds |
+./spec/requests/goals_spec.rb[1:1:1:1]             | passed | 0.02085 seconds |
+./spec/requests/goals_spec.rb[1:1:2:1]             | passed | 0.01824 seconds |
+./spec/requests/goals_spec.rb[1:2:1:1]             | passed | 0.02001 seconds |
+./spec/requests/goals_spec.rb[1:2:1:2]             | passed | 0.07684 seconds |
+./spec/requests/goals_spec.rb[1:2:2:1]             | passed | 0.01123 seconds |
 ./spec/requests/likes_spec.rb[1:1:1:1]             | passed | 0.02579 seconds |
 ./spec/requests/likes_spec.rb[1:1:2:1]             | passed | 0.0249 seconds  |
 ./spec/requests/likes_spec.rb[1:2:1:1]             | passed | 0.03156 seconds |
