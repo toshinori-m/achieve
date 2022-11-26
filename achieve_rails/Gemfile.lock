@@ -249,7 +249,6 @@ GEM
     zeitwerk (2.6.1)
 
 PLATFORMS
-  ruby
   x86_64-darwin-21
 
 DEPENDENCIES

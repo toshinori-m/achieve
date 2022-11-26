@@ -1,0 +1,59 @@
+Security:
+  Enabled: true
+
+Security/IoMethods:
+  Enabled: true
+
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/SingleLineMethods:
+  Enabled: true
+
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: true
+
+Style/RedundantReturn:
+  Enabled: true
+
+Style/GlobalVars:
+  Enabled: true
+  Severity: warning
+  Exclude:
+    - 'lib/tasks/**/*'
+    - 'script/**/*'
+    - 'spec/**/*.rb'
+    - 'plugins/*/spec/**/*'
+
+Lint/Debugger:
+  Enabled: true
+
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: false
+
+# Enable Layout/LineLength because certain cops that most projects use
+# (e.g. Style/IfUnlessModifier) require Layout/LineLength to be enabled.
+# By leaving it disabled, those rules will mis-fire.
+Layout/LineLength:
+  Enabled: true
+  Max: 240
