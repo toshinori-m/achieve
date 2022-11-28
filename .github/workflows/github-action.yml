@@ -9,7 +9,6 @@ on:
 jobs:
   deploy:
     name: Deploy app to AWS
-    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Install SSH key
