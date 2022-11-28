@@ -2,9 +2,35 @@ name: Run rspec, rubocop
 
 on:
   push:
+    branches:
+      - master
   pull_request:
 
 jobs:
+  deploy:
+    name: Deploy app to AWS
+    # needs: test
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        run: |
+          mkdir -p -m 700 ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/Achieve-docker-ec2
+          chmod 600 ~/.ssh/Achieve-docker-ec2
+      - name: Deploy
+        run: |
+          eval $(ssh-agent)
+          ssh-add ~/.ssh/Achieve-docker-ec2
+          ssh -o StrictHostKeyChecking=no -A webapp@${{ secrets.TARGET_HOSTNAME }} "cd Achieve &&
+          git pull origin master &&
+          ~/.rbenv/shims/bundle config --local deployment true &&
+          ~/.rbenv/shims/bundle config --local without development:test &&
+          ~/.rbenv/shims/bundle install &&
+          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
+          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate &&
+          # ~/.rbenv/shims/bundle exec pumactl restart"
+
   rspec:
     runs-on: ubuntu-latest
     timeout-minutes: 10
