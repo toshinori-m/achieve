@@ -9,6 +9,7 @@ on:
 jobs:
   deploy:
     name: Deploy app to AWS
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Install SSH key
@@ -26,8 +27,7 @@ jobs:
           ~/.rbenv/shims/bundle config --local without development:test &&
           ~/.rbenv/shims/bundle install &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
-          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate &&
-          ~/.rbenv/shims/bundle exec pumactl restart"
+          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate
 
   rspec:
     runs-on: ubuntu-latest
