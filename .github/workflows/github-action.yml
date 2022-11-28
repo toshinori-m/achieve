@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: Deploy app to AWS
-    # needs: test
+    needs: test
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +29,7 @@ jobs:
           ~/.rbenv/shims/bundle install &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate &&
-          # ~/.rbenv/shims/bundle exec pumactl restart"
+          ~/.rbenv/shims/bundle exec pumactl restart"
 
   rspec:
     runs-on: ubuntu-latest
