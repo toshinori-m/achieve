@@ -27,6 +27,7 @@ jobs:
           ~/.rbenv/shims/bundle install &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate"
+        working-directory: ./achieve_rails
 
   rspec:
     runs-on: ubuntu-latest
