@@ -26,7 +26,7 @@ jobs:
           ~/.rbenv/shims/bundle config --local without development:test &&
           ~/.rbenv/shims/bundle install &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
-          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate
+          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate"
 
   rspec:
     runs-on: ubuntu-latest
