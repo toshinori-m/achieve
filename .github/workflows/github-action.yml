@@ -72,7 +72,7 @@ jobs:
           gem install rubocop
           rubocop
         working-directory: ./achieve_rails
-        
+
   deploy:
     name: Deploy app to AWS
     needs: [rspec, rubocop]
@@ -94,4 +94,5 @@ jobs:
           ~/.rbenv/shims/bundle config --local without development:test &&
           ~/.rbenv/shims/bundle install &&
           RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
-          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate"
+          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate
+          ~/.rbenv/shims/bundle exec pumactl restart"
