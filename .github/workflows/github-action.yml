@@ -89,10 +89,4 @@ jobs:
           eval $(ssh-agent)
           ssh-add ~/.ssh/Achieve-docker-ec2
           ssh -o StrictHostKeyChecking=no -A ec2-user@${{ secrets.TARGET_HOSTNAME }} "cd Achieve &&
-          git pull origin master &&
-          ~/.rbenv/shims/bundle config --local deployment true &&
-          ~/.rbenv/shims/bundle config --local without development:test &&
-          ~/.rbenv/shims/bundle install &&
-          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails assets:precompile &&
-          RAILS_ENV=production ~/.rbenv/shims/bundle exec rails db:migrate
-          ~/.rbenv/shims/bundle exec pumactl restart"
+          git pull origin master"
