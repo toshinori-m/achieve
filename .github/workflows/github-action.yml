@@ -88,4 +88,5 @@ jobs:
         run: |
           eval $(ssh-agent)
           ssh-add ~/.ssh/Achieve-docker-ec2
-          ssh -o StrictHostKeyChecking=no -A ec2-user@${{ secrets.TARGET_HOSTNAME }} "git pull origin master && cd achieve"
+          ssh -o StrictHostKeyChecking=no -A ec2-user@${{ secrets.TARGET_HOSTNAME }} 
+          "cd achieve && git pull origin master"
