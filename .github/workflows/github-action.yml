@@ -89,4 +89,4 @@ jobs:
           eval $(ssh-agent)
           ssh-add ~/.ssh/Achieve-docker-ec2
           ssh -o StrictHostKeyChecking=no -A webapp@${{ secrets.TARGET_HOSTNAME }} 
-          "cd Achieve-docker-ec2 && git pull origin master"
+          "ls -al"
