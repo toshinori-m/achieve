@@ -1,6 +1,6 @@
 <template>
   <div class="container welcome">
-    <p>ようこそ！</p>
+    <p>こんにちは！</p>
     <div v-if="shouldShowLoginForm">
       <LoginForm @redirectToHome="redirectToHome"/>
       <p class="change-form">初めての方は<span @click="shouldShowLoginForm = false">こちら</span>をクリック</p>
