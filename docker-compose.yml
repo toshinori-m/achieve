@@ -33,7 +33,7 @@ services:
       context: ./achieve_vuejs/
       dockerfile: Dockerfile
     volumes:
-      - ./achieve_vuejs:/achieve_vue
+      - ./achieve_vuejs:/usr/src
     # command: yarn run serve
     ports:
       - 80:8080
