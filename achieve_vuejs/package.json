@@ -22,9 +22,7 @@
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.13",
     "vue-axios": "^3.4.1",
-    "vue-router": "^4.0.3"
-  },
-  "devDependencies": {
+    "vue-router": "^4.0.3",
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@babel/preset-env": "^7.19.1",
