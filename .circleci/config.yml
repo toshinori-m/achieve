@@ -1,27 +1,35 @@
 version: 2.1
-jobs:
-  build:
+executors:
+  node:
     docker:
       - image: cimg/node:16.17.1
+commands:
+  restore_modules:
     steps:
-      - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
-      - run:
-          name: install dependencies
-          command: yarn install
+  save_modules:
+    steps:
       - save_cache:
           key:  dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
-  test:
-    docker:
-      - image: cimg/node:16.17.1
+
+jobs:
+  build:
+    executor: node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "achieve_vuejs/package.json" }}
+      - restore_modules
+      - run:
+          name: install dependencies
+          command: yarn install
+      - save_modules
+  test:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
       - run:
           name: install dependencies
           command: yarn install
