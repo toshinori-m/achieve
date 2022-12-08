@@ -28,6 +28,7 @@ jobs:
       - run: 
           name: lint dependencies
           command: yarn lint
+          working_directory: ./achieve_vuejs
   build:
     executor: node
     steps:
