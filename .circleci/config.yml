@@ -24,11 +24,12 @@ jobs:
       - run:
           name: install dependencies
           command: yarn install
+          working_directory: ./achieve_vuejs
       - save_modules
       - run: 
           name: lint dependencies
-          working_directory: ./achieve_vuejs
           command: yarn lint
+          working_directory: ./achieve_vuejs
   build:
     executor: node
     steps:
@@ -49,8 +50,8 @@ jobs:
           working_directory: ./achieve_vuejs
       - run:
           name: unit test
-          working_directory: ./achieve_vuejs
           command: yarn test
+          working_directory: ./achieve_vuejs
 workflows:
   version: 2
   lint_build_and_test:
