@@ -32,6 +32,7 @@ jobs:
       - restore_modules
       - run:
           name: install dependencies
+          working_directory: ./achieve_vuejs
           command: yarn install
       - run:
           name: unit test
