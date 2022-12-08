@@ -1,37 +1,46 @@
 version: 2.1
+executors:
+  node:
+    docker:
+      - image: cimg/node:16.17.1
+commands:
+  restore_modules:
+    steps:
+      - restore_cache:
+          key: dependency-cache-{{ checksum "./achieve_vuejs/yarn.lock" }}
+  save_modules:
+    steps:
+      - save_cache:
+          key:  dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
 
 jobs:
-  test_achieve_vuejs:
-    docker:
-      - image: circleci/node:16.17.1
-        environment:
-          NODE_ENV: test
-
-    working_directory: ~/achieve_vuejs
-
+  build:
+    executor: node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "~/achieve_vuejs/package.json" }}
+      - restore_modules
       - run:
-          name: install-packages
-          command: npm install
-          working_directory: ~/achieve_vuejs
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "~/achieve_vuejs/package.json" }}
+          name: install dependencies
+          command: yarn install
+      - save_modules
+  test:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
       - run:
-          name: test
-          command: npm run test
-          working_directory: ~/achieve_vuejs
-
+          name: install dependencies
+          command: yarn install
+          working_directory: ./achieve_vuejs
+      - run:
+          name: unit test
+          working_directory: ./achieve_vuejs
+          command: yarn test
 workflows:
   version: 2
-  test:
+  build_and_test:
     jobs:
-      - test_achieve_vuejs:
-          filters:
-            branches:
-              ignore: master
+      - build
+      - test
