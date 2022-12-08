@@ -7,7 +7,7 @@ commands:
   restore_modules:
     steps:
       - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          key: dependency-cache-{{ checksum "./achieve_vuejs/yarn.lock" }}
   save_modules:
     steps:
       - save_cache:
