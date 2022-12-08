@@ -20,7 +20,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v1-dependencies-{{ checksum "~/achieve_vuejs/package.json" }}
+          keys:
+            - v1-dependencies-{{ checksum "~/repo/achieve_vuejs/package.json" }}
       - run:
           name: install dependencies
           command: yarn install
