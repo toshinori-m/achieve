@@ -16,8 +16,8 @@ commands:
             - ./node_modules
 
 jobs:
-  package-install-and-lint:
-    executor: frontend-executor
+  lint:
+    executor: node
     steps:
       - checkout
       - restore_modules
@@ -52,12 +52,12 @@ jobs:
           command: yarn test
 workflows:
   version: 2
-  build_and_test:
+  lint_build_and_test:
     jobs:
-      - package-install-and-lint
+      - lint
       - build:
           requires:
-            - package-install-and-lint
+            - lint
       - test:
           requires:
-            - package-install-and-lint
+            - lint
