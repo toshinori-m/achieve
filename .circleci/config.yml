@@ -11,11 +11,25 @@ commands:
   save_modules:
     steps:
       - save_cache:
-          key:  dependency-cache-{{ checksum "yarn.lock" }}
+          key:  dependency-cache-{{ checksum "./achieve_vuejs/yarn.lock" }}
           paths:
             - ./node_modules
 
 jobs:
+  lint:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: install dependencies
+          command: yarn install
+          working_directory: ./achieve_vuejs
+      - save_modules
+      - run: 
+          name: lint dependencies
+          command: yarn lint
+          working_directory: ./achieve_vuejs
   build:
     executor: node
     steps:
@@ -36,11 +50,16 @@ jobs:
           working_directory: ./achieve_vuejs
       - run:
           name: unit test
-          working_directory: ./achieve_vuejs
           command: yarn test
+          working_directory: ./achieve_vuejs
 workflows:
   version: 2
-  build_and_test:
+  lint_build_and_test:
     jobs:
-      - build
-      - test
+      - lint
+      - build:
+          requires:
+            - lint
+      - test:
+          requires:
+            - lint
