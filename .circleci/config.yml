@@ -30,15 +30,6 @@ jobs:
           name: lint dependencies
           command: yarn lint
           working_directory: ./achieve_vuejs
-  build:
-    executor: node
-    steps:
-      - checkout
-      - restore_modules
-      - run:
-          name: install dependencies
-          command: yarn install
-      - save_modules
   test:
     executor: node
     steps:
@@ -54,12 +45,9 @@ jobs:
           working_directory: ./achieve_vuejs
 workflows:
   version: 2
-  lint_build_and_test:
+  lint_and_test:
     jobs:
       - lint
-      - build:
-          requires:
-            - lint
       - test:
           requires:
             - lint
