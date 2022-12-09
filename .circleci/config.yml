@@ -11,7 +11,7 @@ commands:
   save_modules:
     steps:
       - save_cache:
-          key:  dependency-cache-{{ checksum "yarn.lock" }}
+          key:  dependency-cache-{{ checksum "./achieve_vuejs/yarn.lock" }}
           paths:
             - ./node_modules
 
