@@ -23,7 +23,7 @@ jobs:
       - restore_modules
       - run:
           name: install dependencies
-          command: yarn installge
+          command: yarn install
           working_directory: ./achieve_vuejs
       - save_modules
       - run: 
