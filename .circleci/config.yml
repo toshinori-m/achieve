@@ -23,8 +23,7 @@ jobs:
       - restore_modules
       - run:
           name: install dependencies
-          command: yarn install
-          working_directory: ./achieve_vuejs
+          command: yarn installge
       - save_modules
       - run: 
           name: lint dependencies
