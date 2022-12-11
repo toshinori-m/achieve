@@ -39,6 +39,7 @@ jobs:
           name: install dependencies
           command: yarn install
           working_directory: ./achieve_vuejs
+      - save_modules
       - run:
           name: unit test
           command: yarn test
