@@ -1,5 +1,5 @@
 <template>
-  <div class="topHeader">
+  <div class="z-40 topHeader">
     <h1>achieve one's goal</h1>
     <top>
       <form @submit="redirectToWelcome">
