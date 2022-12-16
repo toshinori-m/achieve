@@ -1,11 +1,11 @@
 <template>
-  <div class="welcom_Header">
+  <div class="welcome_Header">
     <h1>achieve one's goal</h1>
   </div>
 </template>
 
 <style>
-.welcom_Header{
+.welcome_Header{
   background-color: #0066ff89;
   align-items: center;
   padding: 20px 20px;
@@ -15,7 +15,7 @@
   top: 0;
   left: 0;
 }
-.welcom_Header h1 {
+.welcome_Header h1 {
   text-align: center;
   margin: 0px 50px 0px 50px;
   font-size: 25px;
