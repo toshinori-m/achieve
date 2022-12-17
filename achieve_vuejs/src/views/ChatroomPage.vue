@@ -75,11 +75,4 @@ export default {
 </script>
 
 <style>
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: 80px auto;
-  border-radius: 3px;
-  box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
-}
 </style>

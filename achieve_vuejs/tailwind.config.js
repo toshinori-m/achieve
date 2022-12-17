@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      sm: '578px',
+      sm: '500px',
       md: '846px',
       lg: '976px',
       xl: '1440px',
@@ -13,5 +13,29 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        ".text-shadow": {
+          textShadow: "0px 2px 3px lime"
+        },
+        ".text-shadow-md": {
+          textShadow: "0px 3px 3px lime"
+        },
+        ".text-shadow-lg": {
+          textShadow: "0px 5px 3px lime"
+        },
+        ".text-shadow-xl": {
+          textShadow: "0px 7px 3px lime"
+        },
+        ".text-shadow-2xl": {
+          textShadow: "0px 10px 3px lime"
+        },
+        ".text-shadow-none": {
+          textShadow: "none"
+        }
+      };
+
+      addUtilities(newUtilities);
+    }],
 }

@@ -10,6 +10,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   methods: {
@@ -19,12 +20,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.topHeader h1 {
-  /* margin: -5px 50px; */
-  /* font-size: 25px; */
-  /* text-transform: uppercase; */
-  /* text-shadow: 1px 1px 2px rgb(0, 255, 145); */
-}
-</style>
