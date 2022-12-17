@@ -1,19 +1,19 @@
 <template>
   <div>
     <h2>ログイン</h2>
-    <div class= "w-80 my-5 mx-auto" @submit.prevent="login">
+    <form class= "w-80 my-5 mx-auto" @submit.prevent="login">
       <input class="w-full py-3 px-5 my-2 mx-auto rounded border-2 border-gray-200 box-border" type="email" required placeholder="メールアドレス" v-model="email">
       <input class="w-full py-3 px-5 my-2 mx-auto rounded border-2 border-gray-200 box-border" type="password" required placeholder="パスワード" v-model="password">
       <div class="error">{{ error }}</div>
       <button class="ok_button">ログインする</button>
-    </div>
-    <div class= "w-80 my-5 mx-auto" @submit.prevent="loginWithGestUser">
+    </form>
+    <form class= "w-80 my-5 mx-auto" @submit.prevent="loginWithGestUser">
       <button class="ok_button">ゲストログイン</button>
       <ul class="Guest">
         <li>↑</li>
         <li>（あらかじめゲストユーザーを作成し、その情報でログイン）</li>
       </ul>
-    </div>
+    </form>
   </div>
 </template>
 
