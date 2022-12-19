@@ -1,31 +1,31 @@
 <template>
-  <div class="navHeader">
-    <h1>achieve one's goal</h1>
-    <nav>
-      <ul class="navbar">
-        <li>
-          <form @submit="redirectToHome">
-            <button class="nave_button">Home</button>
+  <div class="z-40 relative fixed top-0 bg-blue-500/75 w-full h-28 md:h-16">
+    <div class="text-center mb-2 p-5 md:text-left">
+      <h1 class="uppercase text-2xl text-shadow-md ">achieve one's goal</h1>
+    </div>
+    <div class=" ">
+      <ul class="flex flex-row text-center md:absolute md:right-3 md:top-5">
+        <li class="basis-1/6 md:mx-3">
+          <form @click="redirectToHome">
+            <button class="text-shadow text-sm sm:text-lg">Home</button>
           </form>
         </li>
-        <li>
-          <form @submit="redirectToTraining">
-            <button class="nave_button">Training</button>
+        <li class="basis-1/5 md:mx-3">
+          <form @click="redirectToTraining">
+            <button class="text-shadow text-sm sm:text-lg">Training</button>
           </form>
         </li>
-        <li>
-          <form @submit="redirectToChatroom">
-            <button class="nave_button">Chatroom</button>
+        <li class="basis-1/4 md:mx-3">
+          <form @click="redirectToChatroom">
+            <button class="text-shadow text-sm sm:text-lg">Chatroom</button>
           </form>
         </li>
-        <li>
+        <li class="basis-2/5 -mt-2 -mx-1 md:mx-3">
           <button @click="logout" class="out_button">ログアウト</button>
           <div class="error">{{ error }}</div>
         </li>
       </ul>
-      <div>
-      </div>
-    </nav>
+    </div>
   </div>
 </template>
 <script>
@@ -78,44 +78,4 @@ export default {
 </script>
 
 <style>
-.navHeader{
-  background-color: #0066ff89;
-  align-items: center;
-  padding: 20px 20px;
-  width: 100%;
-  height: 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.navHeader h1 {
-  float: left;
-  margin: 0px 50px 0px 50px;
-  font-size: 25px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgb(0, 255, 145);
-}
-.nave_button {
-	position: relative;
-  left:300px;
-  background: none;
-  font-size: 18px;
-  margin: 0px -50px 0px 80px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgb(0, 255, 145);
-  cursor: pointer;
-}
-.navbar li {
-  display:inline-block;
-  margin: 0px 0px 0px 50px;
-}
-.navbar li + li {
-  margin: 0px 0px 0px 0px;
-}
-.out_button {
-	position: relative;
-  left: 300px;
-  top: -10px;
-  margin: 0px -50px 0px 80px;
-}
 </style>
