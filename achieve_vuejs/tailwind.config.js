@@ -19,8 +19,14 @@ module.exports = {
         ".text-shadow": {
           textShadow: "0px 2px 3px lime"
         },
+        ".text-shadow-b": {
+          textShadow: "0px 2px 3px blue"
+        },
         ".text-shadow-md": {
           textShadow: "0px 3px 3px lime"
+        },
+        ".text-shadow-md-b": {
+          textShadow: "0px 3px 3px blue"
         },
         ".text-shadow-lg": {
           textShadow: "0px 5px 3px lime"
