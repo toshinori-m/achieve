@@ -1,10 +1,10 @@
 <template>
-  <div class="goal py-36">
+  <div class="py-36 text-center">
     <h2 class="text-3xl tracking-widest mb-7 text-center text-white text-shadow-b">今期目標</h2>
     <form class="sm:w-4/5 md:w-3/4 my-14 mx-auto" @submit.prevent ="goal">
       <input class="rounded-2xl w-full py-2 px-3 " type="aim" required placeholder="今期目標を入力" v-model="aim">
       <div class="error">{{ error }}</div>
-      <button class="mt-10 mx-auto ok_button">OK</button>
+      <button class="mt-10 ok_button">OK</button>
     </form>
   </div>
 </template>
