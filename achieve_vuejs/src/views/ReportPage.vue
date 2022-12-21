@@ -1,5 +1,5 @@
 <template>
-  <div class="report_page text-center pt-10">
+  <div class="text-center pt-10">
     <h2 class="text-3xl tracking-widest text-center text-white text-shadow-b">達成出来た日</h2>
     <form class="sm:w-4/5 md:w-3/4 my-8 mx-auto" @submit.prevent ="reports">
       <p class="text-lg text-shadow">登録年月日：{{ datepicker_value }}</p>
