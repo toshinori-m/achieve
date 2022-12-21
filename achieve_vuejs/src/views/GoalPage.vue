@@ -1,10 +1,10 @@
 <template>
-  <div class="goal">
-    <h2>今期目標</h2>
-    <form @submit.prevent ="goal">
-      <input type="aim" required placeholder="今期目標を入力" v-model="aim">
+  <div class="goal py-36">
+    <h2 class="text-3xl tracking-widest mb-7 text-center text-white text-shadow-b">今期目標</h2>
+    <form class="sm:w-4/5 md:w-3/4 my-14 mx-auto" @submit.prevent ="goal">
+      <input class="rounded-2xl w-full py-2 px-3 " type="aim" required placeholder="今期目標を入力" v-model="aim">
       <div class="error">{{ error }}</div>
-      <button class="ok_button">OK</button>
+      <button class="mt-10 mx-auto ok_button">OK</button>
     </form>
   </div>
 </template>
@@ -46,31 +46,4 @@ export default {
 </script>
 
 <style>
-.goal {
-  padding: 150px 0;
-}
-.goal h2{
-  font-size: 30px;
-  letter-spacing: 5px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 2px blue;
-}
-.goal form {
-  width: 800px;
-  margin: 60px auto;
-}
-.goal input {
-  width: 100%;
-  padding: 8px 20px;
-  margin: 8px auto;
-  border-radius: 4px;
-  border: 1px solid rgb(238, 238, 238);
-  outline: none;
-  box-sizing: border-box;
-}
-.goal button {
-  margin: 30px auto;
-}
 </style>
