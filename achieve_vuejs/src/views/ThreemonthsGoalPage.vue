@@ -1,5 +1,5 @@
 <template>
-  <div class="threemonths_goal text-center py-24">
+  <div class="text-center py-24">
     <h2 class="text-3xl tracking-widest mb-7 text-center text-white text-shadow-b">３ヶ月毎の目標</h2>
     <form class="sm:w-4/5 md:w-3/4 my-14 mx-auto" @submit.prevent ="threemonths_goal">
       <p class="text-lg text-shadow">１〜３月の目標</p>
