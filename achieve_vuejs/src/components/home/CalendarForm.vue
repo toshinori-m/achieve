@@ -1,11 +1,11 @@
 <template>
-  <div class="calendar">
-    <h2>&lt;カレンダー&gt;</h2>
+  <div class="text-center">
+    <h2 class="uppercase text-3xl tracking-widest mb-3 text-center text-white text-shadow-b">&lt;カレンダー&gt;</h2>
     <DatePicker mode="date" v-model="date" :masks="masks">
       <template v-slot="{ inputValue, inputEvents }">
         <input
           id="input_date"
-          class="number_of_days"
+          class="text-center text-lg tracking-widest mb-3 py-1"
           :value="inputValue"
           v-on="inputEvents"
         />
@@ -14,9 +14,6 @@
     <form @submit="redirectToReport">
       <button class="ok_button" id="submit_btn">カレンダーの日付を選択後クリック</button>
     </form>
-    <!-- <div v-for="report in reports" :key="report.id">
-      <p> {{ report }} </p>
-    </div> -->
     <div class="error">{{ error }}</div>
   </div>
 </template>
@@ -24,7 +21,6 @@
 import 'v-calendar/dist/style.css';
 import { DatePicker } from 'v-calendar';
 import axios from 'axios'
-// import getItem from '../../auth/getItem'
 
 export default {
   components: {
@@ -73,24 +69,4 @@ export default {
 }
 </script>
 <style>
-.calendar {
-  text-align: center;
-  margin: -150px 0px 0px 0px;
-}
-.calendar h2{
-  font-size: 30px;
-  letter-spacing: 5px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 2px blue;
-}
-.number_of_days{
-  font-size: 18px;
-  padding: 5px 10px;
-  letter-spacing: 5px;
-  margin-bottom: 15px;
-  text-align: center;
-  border: none;
-}
 </style>

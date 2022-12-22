@@ -1,10 +1,10 @@
 <template>
-  <div class="goal">
+  <div class="text-center py-20">
     <form @submit="redirectToGoal">
       <button class="ok_button">今期目標</button>
     </form>
-    <div v-for="goal in goals" :key="goal.id">
-      <p> {{ goal.aim }} </p>
+    <div class="bg-white rounded-2xl w-full mt-2 mx-auto py-2 px-3 sm:w-4/5 md:w-3/4" v-for="goal in goals" :key="goal.id">
+      <p class="text-left"> {{ goal.aim }} </p>
     </div>
     <div class="error">{{ error }}</div>
   </div>
@@ -12,8 +12,7 @@
 
 <script>
   import axios from 'axios'
-  // import getItem from '../../auth/getItem'
-  
+
   export default {
     data () {
       return {
@@ -52,16 +51,4 @@
 </script>
 
 <style>
-  .goal {
-    text-align: center;
-    padding: 150px 0;
-  }
-  .goal p {
-    text-align:left;
-    font-size: 15px;
-    padding: 5px 20px;
-    margin: -50px;
-    background-color: white;
-    color: black;
-  }
 </style>

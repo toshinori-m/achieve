@@ -1,10 +1,10 @@
 <template>
-  <div class="monthly">
+  <div class="text-center mt-13">
     <form @submit="redirectToMonthlyGoal">
       <button class="ok_button">今月目標</button>
     </form>
-    <div v-for="monthly_goal in monthly_goals" :key="monthly_goal.id">
-      <p> {{ monthly_goal.aim }} </p>
+    <div class="bg-white rounded-2xl w-full mt-2 mx-auto py-2 px-3 sm:w-4/5 md:w-3/4" v-for="monthly_goal in monthly_goals" :key="monthly_goal.id">
+      <p class="text-left"> {{ monthly_goal.aim }} </p>
     </div>
     <div class="error">{{ error }}</div>
   </div>
@@ -12,7 +12,6 @@
 
 <script>
   import axios from 'axios'
-  // import getItem from '../../auth/getItem'
   
   export default {
     data () {
@@ -52,16 +51,4 @@
 </script>
 
 <style>
-  .monthly {
-    text-align: center;
-    padding: 30px 0;
-  }
-  .monthly p {
-    text-align:left;
-    font-size: 15px;
-    padding: 5px 20px;
-    margin: 30px;
-    background-color: white;
-    color: black
-  }
 </style>
