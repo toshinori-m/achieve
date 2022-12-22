@@ -57,7 +57,7 @@ const routes = [
     component: Report
   },
   {
-    path: '/record_page',
+    path: '/record',
     name: 'RecordPage',
     component: Record
   }
