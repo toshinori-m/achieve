@@ -37,11 +37,31 @@ module.exports = {
         ".text-shadow-2xl": {
           textShadow: "0px 10px 3px lime"
         },
-        ".text-shadow-none": {
-          textShadow: "none"
+
+        // ChatWindow.vue
+        ".received .message": {
+          background: "#eee",
+          padding: "10px",
+          display: "inline-block",
+          borderRadius: "30px",
+          marginBottom: "2px",
+          maxWidth: "400px"
+        },
+        ".received": {
+          float: "left"
+        },
+        ".sent": {
+          float: "right"
+        },
+        ".sent .message": {
+          background: "#677bb4",
+          padding: "10px",
+          display: "inline-block",
+          borderRadius: "30px",
+          marginBottom: "2px",
+          maxWidth: "400px"
         }
       };
-
       addUtilities(newUtilities);
     }],
 }
