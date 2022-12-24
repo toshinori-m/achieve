@@ -35,7 +35,7 @@ export default {
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get('http://localhost:3000/messages', {
+        const res = await axios.get('http://54.199.72.77:3000/messages', {
           headers: getItem
         })
         if (!res) {
