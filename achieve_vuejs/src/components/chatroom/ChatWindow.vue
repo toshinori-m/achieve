@@ -90,4 +90,33 @@ export default {
 </script>
 
 <style scoped>
+  .received .message {
+    background: #eee;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 30px;
+    margin-bottom: 2px;
+    max-width: 400px;
+  }
+  .received {
+    float: left;
+  }
+  .sent {
+    float: right;
+  }
+  .sent .message {
+    background: #677bb4;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 30px;
+    margin-bottom: 2px;
+    max-width: 400px;
+  }
+  .heart {
+    color: rgb(236, 29, 29);
+  }
+  .heart-count {
+    color: rgb(20, 19, 19);
+  }
 </style>

@@ -14,7 +14,7 @@ body {
   border: 0;
   line-height: 2;
   padding: 5px 20px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
@@ -28,10 +28,10 @@ body {
               inset -2px -2px 3px rgba(0, 0, 0, .6);
   cursor: pointer;
   }
-  .ok:hover {
+  .ok_button:hover {
     background-color: #0066FF;
   }
-  .ok:active {
+  .ok_button:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
   }
@@ -53,10 +53,10 @@ body {
                 inset -2px -2px 3px rgba(0, 0, 0, .6);
     cursor: pointer;
     }
-    .out:hover {
+    .out_button:hover {
       background-color: rgb(6, 204, 6);
     }
-    .out:active {
+    .out_button:active {
       box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                   inset 2px 2px 3px rgba(0, 0, 0, .6);
     }
