@@ -1,20 +1,20 @@
 <template>
-  <div class="threemonth">
+  <div class="text-center -mt-16">
     <form @submit="redirectToThreemonthsGoal">
       <button class="ok_button">３ヶ月毎の目標</button>
     </form>
-    <div v-for="threemonths_goal in threemonths_goals" :key="threemonths_goal.id">
+    <div class="bg-white rounded-2xl w-full mt-2 mx-auto py-2 px-3 sm:w-4/5 md:w-3/4 my-4" v-for="threemonths_goal in threemonths_goals" :key="threemonths_goal.id">
       <div v-show = "threemonths_goal.quarter === 0">
-        <p>１〜３月 = {{ threemonths_goal.aim }}</p>
+        <p class="text-left">１〜３月 = {{ threemonths_goal.aim }}</p>
       </div>
       <div v-show = "threemonths_goal.quarter === 1">
-        <p>４〜６月 = {{ threemonths_goal.aim }}</p>
+        <p class="text-left">４〜６月 = {{ threemonths_goal.aim }}</p>
       </div>
       <div v-show = "threemonths_goal.quarter === 2">
-        <p>７〜９月 = {{ threemonths_goal.aim }}</p>
+        <p class="text-left">７〜９月 = {{ threemonths_goal.aim }}</p>
       </div>
       <div v-show = "threemonths_goal.quarter === 3">
-        <p>１０〜１２月 = {{ threemonths_goal.aim }}</p>
+        <p class="text-left">１０〜１２月 = {{ threemonths_goal.aim }}</p>
       </div>
     </div>
     <div class="error">{{ error }}</div>
@@ -63,16 +63,4 @@ export default {
 </script>
 
 <style>
-.threemonth {
-  text-align: center;
-  margin: -40px 0 0 0;
-}
-.threemonth p {
-  text-align:left;
-  font-size: 15px;
-  padding: 5px 20px;
-  margin: 20px -50px;
-  background-color: white;
-  color: black;
-}
 </style>
