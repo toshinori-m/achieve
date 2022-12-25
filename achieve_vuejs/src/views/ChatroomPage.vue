@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    const cable = ActionCable.createConsumer('ws://localhost:3000/cable')
+    const cable = ActionCable.createConsumer('ws://54.199.72.77:3000/cable')
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
         this.getMessages().then(() => {
