@@ -6,19 +6,22 @@
 </template>
 
 <script>
+import TopHeader from './components/TopHeader.vue';
 import MainHeader from './components/MainHeader.vue';
-import WelcomHeader from './components/WelcomHeader.vue';
+import WelcomeHeader from './components/WelcomeHeader.vue';
 
 export default ({
   name: 'App',
-  components: { MainHeader, WelcomHeader },
+  components: { TopHeader,MainHeader, WelcomeHeader },
   computed: {
     headerComponent() {
       switch(this.$route.path) {
-        case '/main':
-          return 'MainHeader';
         case '/':
-          return 'WelcomHeader';
+          return 'TopHeader';
+        case '/welcome':
+          return 'WelcomeHeader';
+        // case '/main':
+        //   return 'MainHeader';
         default:
           return 'MainHeader';
       }

@@ -1,17 +1,17 @@
 <template>
-  <div class="threemonths_goal">
-    <h2>３ヶ月毎の目標</h2>
-    <form @submit.prevent ="threemonths_goal">
-      <p>１〜３月の目標</p>
-      <input type="aim_1" required placeholder="１〜３月" v-model="aim_1">
-      <p>４〜６月の目標</p>
-      <input type="aim_2" required placeholder="４〜６月" v-model="aim_2">
-      <p>７〜９月の目標</p>
-      <input type="aim_3" required placeholder="７〜９月" v-model="aim_3">
-      <p>１０〜１２月の目標</p>
-      <input type="aim_4" required placeholder="１０〜１２月" v-model="aim_4">
+  <div class="text-center py-24">
+    <h2 class="text-3xl tracking-widest mb-7 text-center text-white text-shadow-b">３ヶ月毎の目標</h2>
+    <form class="sm:w-4/5 md:w-3/4 my-14 mx-auto" @submit.prevent ="threemonths_goal">
+      <p class="text-lg text-shadow">１〜３月の目標</p>
+      <input class="rounded-2xl w-full py-2 px-3" type="aim_1" required placeholder="１〜３月" v-model="aim_1">
+      <p class="text-lg mt-5 text-shadow">４〜６月の目標</p>
+      <input class="rounded-2xl w-full py-2 px-3" type="aim_2" required placeholder="４〜６月" v-model="aim_2">
+      <p class="text-lg mt-5 text-shadow">７〜９月の目標</p>
+      <input class="rounded-2xl w-full py-2 px-3" type="aim_3" required placeholder="７〜９月" v-model="aim_3">
+      <p class="text-lg mt-5 text-shadow">１０〜１２月の目標</p>
+      <input class="rounded-2xl w-full py-2 px-3" type="aim_4" required placeholder="１０〜１２月" v-model="aim_4">
       <div class="error">{{ error }}</div>
-      <button class="ok_button">OK</button>
+      <button class="mt-8 ok_button">OK</button>
     </form>
   </div>
 </template>
@@ -56,37 +56,4 @@ export default {
 }
 </script>
 <style>
-.threemonths_goal {
-  text-align: center;
-  padding: 100px 0;
-}
-.threemonths_goal h2{
-  font-size: 30px;
-  letter-spacing: 5px;
-  margin: 20px 0px -30px 0px;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 2px blue;
-}
-.threemonths_goal form {
-  width: 800px;
-  margin: 60px auto;
-}
-.threemonths_goal input {
-  width: 100%;
-  padding: 8px 20px;
-  margin: 7px auto;
-  border-radius: 4px;
-  border: 1px solid rgb(238, 238, 238);
-  outline: none;
-  box-sizing: border-box;
-}
-.threemonths_goal p {
-  font-size: 20px;
-  margin: 20px 330px 0px -300px;
-  color: black;
-}
-.threemonths_goal .ok_button {
-  margin: 30px auto;
-}
 </style>

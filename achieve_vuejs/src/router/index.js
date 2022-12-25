@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Top from '../views/TopPage'
 import Welcome from '../views/WelcomePage'
 import Home from '../views/HomePage'
 import Goal from '../views/GoalPage'
@@ -12,6 +13,11 @@ import Record from '../views/RecordPage'
 const routes = [
   {
     path: '/',
+    name: 'TopPage',
+    component: Top
+  },
+  {
+    path: '/welcome',
     name: 'WelcomePage',
     component: Welcome
   },
@@ -51,7 +57,7 @@ const routes = [
     component: Report
   },
   {
-    path: '/record_page',
+    path: '/record',
     name: 'RecordPage',
     component: Record
   }
