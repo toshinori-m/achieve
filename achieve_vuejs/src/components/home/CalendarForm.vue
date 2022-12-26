@@ -41,7 +41,7 @@ export default {
       try {
         const datePicker = document.getElementById('input_date');
         document.getElementById('submit_btn').addEventListener('click', () => {
-        window.location.href = 'http://localhost/reports/new/?datepicker_value=' + datePicker.value;
+        window.location.href = 'http://54.199.72.77/reports/new/?datepicker_value=' + datePicker.value;
         });
         const res = await axios.get('http://54.199.72.77:3000/reports', {
           headers: {
