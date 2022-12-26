@@ -39,7 +39,7 @@ export default {
     async signUp () {
       this.error = null
       try {
-        const res = await axios.post('http://54.199.72.77:3000/auth', {
+        const res = await axios.post('http://54.199.72.77/auth', {
           name: this.name,
           email: this.email,
           password: this.password,
@@ -64,7 +64,7 @@ export default {
       try {
         const ecrypted_value = crypto.AES.encrypt('name', 'guest')
         const ecrypted_pass = crypto.AES.encrypt('name', 'password')
-        const res = await axios.post('http://54.199.72.77:3000/auth', {
+        const res = await axios.post('http://54.199.72.77/auth', {
           name: ecrypted_value.toString(),
           email: ecrypted_value.toString() + "@guest.com",
           password: ecrypted_pass.toString(),

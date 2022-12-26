@@ -43,7 +43,7 @@ export default {
         document.getElementById('submit_btn').addEventListener('click', () => {
         window.location.href = 'http://localhost/reports/new/?datepicker_value=' + datePicker.value;
         });
-        const res = await axios.get('http://54.199.72.77:3000/reports', {
+        const res = await axios.get('http://54.199.72.77/reports', {
           headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
