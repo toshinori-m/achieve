@@ -6,4 +6,4 @@
 - テスト・静的コード解析
 
 ## インフラ設計図
-<img src= '/README_images/infra.drawio' >
+<img src= '/README_images/infra.png' >
