@@ -1,11 +1,11 @@
 <template>
-  <nav>
-    <div>
-      <p>こんにちは、<span class="name">{{ name }}</span>さん</p>
-      <!-- <p class="email">現在、 {{ email }} でログイン中です</p> -->
+  <div class="mx-auto rounded-xl bg-orange-300 mt-10 mb-2 p-3 shadow-md shadow-lime-700 sm:w-96">
+    <div class="text-center text-xs sm:text-base">
+      <p>こんにちは、<span class="text-blue-500">{{ name }}</span>さん</p>
+      <p class="text-slate-400 text-xs md:text-sm">{{ email }} でログイン中です</p>
       <div class="error">{{ error }}</div>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
@@ -48,24 +48,5 @@ export default {
 }
 </script>
 
-
 <style scoped>
-  nav {
-    background: rgba(255, 166, 0, 0.779);
-    border-radius: 10px;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  nav p {
-    margin: 2px auto;
-    font-size: 16px;
-    color: black;
-  }
-  nav p.email {
-    font-size: 14px;
-    color: #999;
-  }
 </style>

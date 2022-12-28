@@ -1,11 +1,13 @@
 <template>
-  <form>
-    <textarea
-      placeholder="メッセージを入力してEnterを押してください"
-      v-model="message"
-      @keypress.enter.prevent="handleSubmit"
-    ></textarea>
-  </form>
+  <div class="my-5 mx-10">
+    <form>
+      <textarea class="w-full border-4 border-blue-600 border-double mb-1.5 p-2.5 box-border rounded-2xl"
+        placeholder="メッセージを入力してEnterを押してください"
+        v-model="message"
+        @keypress.enter.prevent="handleSubmit"
+      ></textarea>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -26,18 +28,4 @@ export default {
 </script>
 
 <style scoped>
-  form {
-    margin: 10px;
-  }
-  textarea {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 6px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 0;
-    border-radius: 20px;
-    font-family: inherit;
-    outline: none;
-  }
 </style>

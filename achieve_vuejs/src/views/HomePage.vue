@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
-    <h1>Achieve your goals</h1>
-    <div class="home">
+  <div class="text-center">
+    <h1 class="uppercase text-3xl tracking-widest mb-7 text-center text-white text-shadow-b my-4">Achieve your goals</h1>
+    <div class="-mt-20">
       <GoalForm />
-      <!-- <GoalForm @catchGoal="displayMessage"></GoalForm> -->
       <ThreemonthsGoalForm />
       <MonthlyGoalForm />
       <RecordForm />
@@ -23,15 +22,3 @@
     },
   }
 </script>
-<style>
-  .container h1 {
-    font-size: 50px;
-    letter-spacing: -2px;
-    text-align: center;
-    color: white;
-    text-shadow: 1px 1px 2px blue;
-  }
-  .home {
-    margin: -200px 0px 0px 0px;
-  }
-</style>

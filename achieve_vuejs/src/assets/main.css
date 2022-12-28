@@ -1,5 +1,4 @@
 body {
-  padding-top: 20px;
   background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%),url(https://img2.mypl.net/image.php?id=ce3887880ccbd533605406843048d4a446d29293_cms_image.jpg&p=s3-img-origin02&s=960_1480&op=);
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,7 +14,7 @@ body {
   border: 0;
   line-height: 2;
   padding: 5px 20px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
@@ -29,18 +28,18 @@ body {
               inset -2px -2px 3px rgba(0, 0, 0, .6);
   cursor: pointer;
   }
-  .ok:hover {
+  .ok_button:hover {
     background-color: #0066FF;
   }
-  .ok:active {
+  .ok_button:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
   }
   .out_button {
     border: 0;
     line-height: 2;
-    padding: 5px 20px;
-    font-size: 18px;
+    padding: 2px 10px;
+    font-size: 16px;
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -54,10 +53,10 @@ body {
                 inset -2px -2px 3px rgba(0, 0, 0, .6);
     cursor: pointer;
     }
-    .out:hover {
+    .out_button:hover {
       background-color: rgb(6, 204, 6);
     }
-    .out:active {
+    .out_button:active {
       box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                   inset 2px 2px 3px rgba(0, 0, 0, .6);
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mx-auto">
     <Navbar />
     <ChatWindow @connectCable="connectCable" :messages="formattedMessages" ref="chatWindow" />
     <NewChatForm @connectCable="connectCable" />
@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    const cable = ActionCable.createConsumer('ws://http://54.199.72.77:3000/cable')
+    const cable = ActionCable.createConsumer('ws://54.199.72.77:3000/cable')
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
         this.getMessages().then(() => {
@@ -75,11 +75,4 @@ export default {
 </script>
 
 <style>
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: 80px auto;
-  border-radius: 3px;
-  box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
-}
 </style>
