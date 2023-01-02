@@ -23,7 +23,7 @@
     methods: {
       async getGoal () {
         try {
-          const res = await axios.get('http://goals-achieve.click/goals', {
+          const res = await axios.get('https://goals-achieve.click/goals', {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

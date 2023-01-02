@@ -54,7 +54,7 @@
     methods: {
       async reports() {
         try {
-          const res = await axios.post('http://goals-achieve.click/reports', {
+          const res = await axios.post('https://goals-achieve.click/reports', {
             datepicker_value: this.datepicker_value,
             location: this.location, 
             time: this.time, 

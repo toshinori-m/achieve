@@ -35,7 +35,7 @@ export default {
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get('http://goals-achieve.click/messages', {
+        const res = await axios.get('https://goals-achieve.click/messages', {
           headers: getItem
         })
         if (!res) {

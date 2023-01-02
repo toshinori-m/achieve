@@ -35,7 +35,7 @@ export default {
   methods: {
     async getThreemonthsGoal () {
       try {
-        const res = await axios.get('http://goals-achieve.click/threemonths_goals', {
+        const res = await axios.get('https://goals-achieve.click/threemonths_goals', {
           headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
