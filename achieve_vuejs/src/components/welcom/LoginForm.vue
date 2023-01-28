@@ -34,7 +34,7 @@ export default {
     async login() {
       try {
         this.error = null
-        const res = await axios.post('http://54.199.72.77:3000/auth/sign_in', {
+        const res = await axios.post('http://goals-achieve.click:3000/auth/sign_in', {
           email: this.email,
           password: this.password,
           }
@@ -55,7 +55,7 @@ export default {
     },
     async loginWithGestUser() {
       this.error = null
-      const res = await axios.post('http://54.199.72.77:3000/auth/sign_in', {
+      const res = await axios.post('http://goals-achieve.click:3000/auth/sign_in', {
         email: 'guest@example.com',
         password: 'guests',
         }
