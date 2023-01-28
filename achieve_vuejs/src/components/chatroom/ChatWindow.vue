@@ -42,7 +42,7 @@ export default {
     },
     async createLike (messageId) {
       try {
-        const res = await axios.post(`http://goals-achieve.click/messages/${messageId}/likes`, {},
+        const res = await axios.post(`http://goals-achieve.click:3000/messages/${messageId}/likes`, {},
           {
             headers: {
               uid: this.uid,
@@ -61,7 +61,7 @@ export default {
     },
     async deleteLike(likeId) {
       try {
-        const res = await axios.delete(`http://goals-achieve.click/likes/${likeId}`,
+        const res = await axios.delete(`http://goals-achieve.click:3000/likes/${likeId}`,
           {
             headers: {
               uid: this.uid,
