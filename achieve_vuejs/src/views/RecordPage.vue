@@ -27,7 +27,7 @@
     methods: {
       async getRecord () {
         try {
-          const res = await axios.get('http://goals-achieve.click:3000/reports', {
+          const res = await axios.get('http://goals-achieve.click/reports', {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
