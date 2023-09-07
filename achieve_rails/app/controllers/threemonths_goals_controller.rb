@@ -7,12 +7,11 @@ class ThreemonthsGoalsController < ApplicationController
       threemonths_goals_params = ThreemonthsGoal.new(aim: aims[i], quarter: i, user_id: current_user.id)
       quarters = threemonths_goals_params
       if quarters.save
-        render json: { id: threemonths_goals.id, message: '成功しました' }, status: :ok
+        render json: { id: quarters.id, message: '成功しました' }, status: :ok
       else
         render json: { message: '保存出来ませんでした', errors: threemonths_goals.errors.messages }, status: :bad_request
       end
     end
-    render json: { id: threemonths_goals_params.id, message: '成功しました' }, status: :ok
   end
 
   def index
