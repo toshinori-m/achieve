@@ -8,7 +8,6 @@ class ThreemonthsGoalsController < ApplicationController
       threemonths_goals_params.save
     end
     if threemonths_goals_params.save
-      binding.pry
       render json: { id: threemonths_goals_params.id, message: '成功しました' }, status: :ok
     else
       render json: { message: '保存出来ませんでした', errors: threemonths_goals.errors.messages }, status: :bad_request
