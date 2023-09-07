@@ -5,12 +5,13 @@ class ThreemonthsGoalsController < ApplicationController
     aims = [params[:aim_1], params[:aim_2], params[:aim_3], params[:aim_4]]
     for i in 0..3 do
       threemonths_goals_params = ThreemonthsGoal.new(aim: aims[i], quarter: i, user_id: current_user.id)
-      quarters = threemonths_goals_params
-      if quarters.save
-        render json: { id: quarters.id, message: '成功しました' }, status: :ok
-      else
-        render json: { message: '保存出来ませんでした', errors: threemonths_goals.errors.messages }, status: :bad_request
-      end
+      threemonths_goals_params.save
+    end
+    if threemonths_goals_params.save
+      binding.pry
+      render json: { id: threemonths_goals_params.id, message: '成功しました' }, status: :ok
+    else
+      render json: { message: '保存出来ませんでした', errors: threemonths_goals.errors.messages }, status: :bad_request
     end
   end
 
