@@ -9,7 +9,7 @@ Goals_achieved_appは、目標を達成するために季節・月毎に標的�
 アプリ開発を通して、スポーツをしている方へ目標を達成するための役立ちたいと感じたためGoals_achieveを開発することにしました。
 
 ## URL
-https://goals-achieve.click
+http://goals-achieve.click
 
 ## 使用技術
 - フロントエンド
