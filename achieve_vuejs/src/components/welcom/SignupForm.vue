@@ -53,7 +53,6 @@ export default {
           setItem(res.headers, res.data.data.name)
           this.$emit('redirectToHome')
         }
-        console.log({ res })
         return res
       } catch (error) {
         this.error = 'アカウントを登録できませんでした'
@@ -75,7 +74,6 @@ export default {
           setItem(res.headers, res.data.data.name)
           this.$emit('redirectToHome')
         }
-        console.log({ res })
         return res
       } catch (error) {
         this.error = 'アカウントを登録できませんでした'

@@ -26,7 +26,8 @@ export default {
   props: ['messages'],
   data () {
     return {
-      uid: localStorage.getItem('uid')
+      uid: localStorage.getItem('uid'),
+      error: null
     }
   },
   methods: {
@@ -56,7 +57,7 @@ export default {
         }
         this.$emit('connectCable')
       } catch (error) {
-        console.log(error)
+        this.error = 'いいねを保存できませんでした'
       }
     },
     async deleteLike(likeId) {
@@ -75,6 +76,7 @@ export default {
         }
         this.$emit('connectCable')
       } catch (error) {
+        // eslint-disable-next-line
         console.log(error)
       }      
     },

@@ -46,10 +46,8 @@ export default {
           setItem(res.headers, res.data.data.name)
           this.$emit('redirectToHome')
         }
-        console.log({ res })
         return res
       } catch (error) {
-        console.log({ error })
         this.error = 'メールアドレスかパスワードが違います'
       }
     },
@@ -64,7 +62,6 @@ export default {
         setItem(res.headers, res.data.data.name)
         this.$emit('redirectToHome')
       }
-      console.log({ res })
       return res
     }
   }

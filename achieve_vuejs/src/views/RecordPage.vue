@@ -37,10 +37,8 @@
           if (res.data.length === 0){
             this.error = '１０日間の記録を表示できませんでした。毎日の記録を入力して下さい。'
           }
-          console.log({ res })
           this.records = res.data
         } catch (error) {
-        console.log({ error })
         this.error = 'recordを表示できませんでした'
         }
       }

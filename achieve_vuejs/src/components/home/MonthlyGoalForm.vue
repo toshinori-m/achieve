@@ -33,10 +33,8 @@
           if (res.data.length === 0){
             this.error = '今月目標を表示できませんでした。上の今月目標の釦をにて標的を入力して下さい。'
           }
-          console.log({ res })
           this.monthly_goals = res.data
         } catch (error) {
-        console.log({ error })
         this.error = '今月目標を表示できませんでした。上の今月目標の釦をにて標的を入力して下さい。'
         }
       },

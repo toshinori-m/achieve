@@ -29,7 +29,6 @@ export default {
           uid: localStorage.getItem('uid')
         })
         .then(res => {
-          console.log({ res })
           return res
         })
         if (!this.error) {
@@ -37,7 +36,6 @@ export default {
         }
         return res
       } catch (error) {
-        console.log({ error })
         this.error = 'monthly_goalを表示できませんでした'
       }
     }
