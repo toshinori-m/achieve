@@ -67,7 +67,6 @@
             uid: localStorage.getItem('uid')
           })
           .then(res => {
-            console.log({ res })
             return res
           })
           if (!this.error) {
@@ -75,7 +74,6 @@
           }
           return res
         } catch (error) {
-          console.log({ error })
           this.error = 'reportを表示できませんでした'
         }
       }

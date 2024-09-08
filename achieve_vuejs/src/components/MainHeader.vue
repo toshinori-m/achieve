@@ -55,7 +55,6 @@ export default {
           new Error('ログアウトできませんでした')
         }
         if (!this.error) {
-          console.log("ログアウトしました")
           removeItem()
           this.$router.push({ name: 'WelcomePage' })
         }

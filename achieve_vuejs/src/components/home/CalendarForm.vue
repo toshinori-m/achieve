@@ -55,7 +55,6 @@ export default {
         }
         this.reports = res.data
         }  catch (error) {
-      console.log({ error })
       this.error = 'reportを表示できませんでした'
       }
     },

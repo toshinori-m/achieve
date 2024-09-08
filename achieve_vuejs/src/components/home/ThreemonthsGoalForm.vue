@@ -45,10 +45,8 @@ export default {
         if (res.data.length === 0){
           this.error = '３ヶ月毎の目標を表示できませんでした。上の３ヶ月毎の釦をにて標的を入力して下さい。'
         }
-        console.log({ res })
         this.threemonths_goals = res.data
       } catch (error) {
-      console.log({ error })
       this.error = '３ヶ月毎の目標を表示できませんでした。上の３ヶ月毎の釦をにて標的を入力して下さい。'
       }
     },
