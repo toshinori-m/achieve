@@ -5,6 +5,6 @@ module.exports = defineConfig({
     allowedHosts: 'all',
   },
   configureWebpack: {
-    watch: true
+    watch: false
   }
 })
