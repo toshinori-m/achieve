@@ -35,7 +35,7 @@ export default {
   methods: {
     async getThreemonthsGoal () {
       try {
-        const res = await axios.get('http://54.199.72.77:3000/threemonths_goals', {
+        const res = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/threemonths_goals`, {
           headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),
