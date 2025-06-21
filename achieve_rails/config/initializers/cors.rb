@@ -8,7 +8,7 @@ Rails.logger.info "CORS設定: FRONTEND_ORIGIN=#{ENV['FRONTEND_ORIGIN']}"
 Rails.logger.info "CORS設定: BRANCH_ORIGIN=#{ENV['BRANCH_ORIGIN']}"
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://achieve-git-setup-render-deploy-toshinori-ms-projects.vercel.app/'
+    origins 'https://achieve-git-setup-render-deploy-toshinori-ms-projects.vercel.app'
     # origins [
     #   ENV['BRANCH_ORIGIN'],
     #   ENV['FRONTEND_ORIGIN'],
