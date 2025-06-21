@@ -4,16 +4,10 @@
 # Handle Cross-Origin Resource Sharing (CORS) in order to accept cross-origin AJAX requests.
 
 # Read more: https://github.com/cyu/rack-cors
-Rails.logger.info "CORS設定: FRONTEND_ORIGIN=#{ENV['FRONTEND_ORIGIN']}"
-Rails.logger.info "CORS設定: BRANCH_ORIGIN=#{ENV['BRANCH_ORIGIN']}"
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://achieve-git-setup-render-deploy-toshinori-ms-projects.vercel.app'
-    # origins [
-    #   ENV['BRANCH_ORIGIN'],
-    #   ENV['FRONTEND_ORIGIN'],
-    #   'http://localhost:80'
-    # ].compact
+    origins '*'
 
     resource '*',
              headers: :any,
