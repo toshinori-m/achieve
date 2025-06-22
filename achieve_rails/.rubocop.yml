@@ -10,6 +10,11 @@
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyleAlignWith.
 # SupportedStylesAlignWith: either, start_of_block, start_of_line
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    
 Layout/BlockAlignment:
   Exclude:
     - 'spec/requests/reports_spec.rb'

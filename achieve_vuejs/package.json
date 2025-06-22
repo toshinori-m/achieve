@@ -17,6 +17,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@popperjs/core": "^2.11.8",
     "@testing-library/vue": "^6.4.2",
     "@types/jest": "27",
     "@vue/cli-plugin-babel": "~5.0.0",

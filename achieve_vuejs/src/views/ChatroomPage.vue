@@ -55,7 +55,7 @@ export default {
     }
   },
   mounted() {
-    const cable = ActionCable.createConsumer('wss://goals-achieve.onrender.com/cable')
+    const cable = ActionCable.createConsumer(process.env.VUE_APP_CABLE_URL)
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
         this.getMessages().then(() => {
