@@ -71,6 +71,9 @@ export default {
           email: ecrypted_value.toString() + "@guest.com",
           password: ecrypted_pass.toString(),
           password_confirmation: ecrypted_pass.toString()
+          },
+          {
+            withCredentials: true
           }
         )
         if (!this.error) {
