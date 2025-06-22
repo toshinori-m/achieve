@@ -23,7 +23,7 @@
     methods: {
       async getGoal () {
         try {
-          const res = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/goals`, {
+          const res = await axios.get(`https://goals-achieve.onrender.com/goals`, {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

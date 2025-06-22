@@ -24,7 +24,7 @@ export default {
     async logout () {
       this.error = null
       try {
-        const res = await axios.delete(`${process.env.VUE_APP_API_BASE_URL}/auth/sign_out`, {
+        const res = await axios.delete(`https://goals-achieve.onrender.com/auth/sign_out`, {
           headers: {
             uid: this.email,
             "access-token": window.localStorage.getItem('access-token'),

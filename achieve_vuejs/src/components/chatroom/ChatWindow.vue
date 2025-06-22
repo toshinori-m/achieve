@@ -43,7 +43,7 @@ export default {
     },
     async createLike (messageId) {
       try {
-        const res = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/messages/${messageId}/likes`, {},
+        const res = await axios.post(`https://goals-achieve.onrender.com/messages/${messageId}/likes`, {},
           {
             headers: {
               uid: this.uid,
@@ -62,7 +62,7 @@ export default {
     },
     async deleteLike(likeId) {
       try {
-        const res = await axios.delete(`${process.env.VUE_APP_API_BASE_URL}/likes/${likeId}`,
+        const res = await axios.delete(`https://goals-achieve.onrender.com/likes/${likeId}`,
           {
             headers: {
               uid: this.uid,

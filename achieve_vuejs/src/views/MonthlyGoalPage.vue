@@ -22,7 +22,7 @@ export default {
   methods: {
     async monthly_goal() {
       try {
-        const res = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/monthly_goals`,  {
+        const res = await axios.post(`https://goals-achieve.onrender.com/monthly_goals`,  {
           aim: this.aim,
           'access-token': localStorage.getItem('access-token'),
           client: localStorage.getItem('client'),

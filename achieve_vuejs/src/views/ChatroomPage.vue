@@ -35,7 +35,7 @@ export default {
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/messages`, {
+        const res = await axios.get(`https://goals-achieve.onrender.com/messages`, {
           headers: getItem
         })
         if (!res) {
@@ -55,7 +55,7 @@ export default {
     }
   },
   mounted() {
-    const cable = ActionCable.createConsumer(process.env.VUE_APP_CABLE_URL)
+    const cable = ActionCable.createConsumer("wss://goals-achieve.onrender.com/cable")
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
         this.getMessages().then(() => {
