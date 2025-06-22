@@ -44,6 +44,9 @@ export default {
           email: this.email,
           password: this.password,
           password_confirmation: this.passwordConfirmation
+          },
+          {
+            withCredentials: true
           }
         )
         if (!res) {
