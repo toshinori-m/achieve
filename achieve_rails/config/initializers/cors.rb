@@ -3,8 +3,7 @@
 # Avoid CORS issues when API is called from the frontend app.
 # Handle Cross-Origin Resource Sharing (CORS) in order to accept cross-origin AJAX requests.
 
-# Read more: https://github.com/cyu/rack-cors
-Rails.logger.info '✅ CORS設定: 起動時にこのログが出れば設定は読み込まれている'
+# Read more: https://github.com/cyu/rack-cors'
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins 'https://www.goals-achieve.click'
@@ -12,7 +11,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     resource '*',
              headers: :any,
              expose: %w[access-token expiry token-type uid client],
-             methods: %i[get post put patch delete options head],
-             credentials: true
+             methods: %i[get post put patch delete options head]
   end
 end

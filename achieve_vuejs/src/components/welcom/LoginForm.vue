@@ -37,9 +37,6 @@ export default {
         const res = await axios.post(`https://goals-achieve.onrender.com/auth/sign_in`, {
           email: this.email,
           password: this.password,
-          },
-          {
-            withCredentials: true
           }
         )
         if (!res) {
@@ -59,9 +56,6 @@ export default {
       const res = await axios.post(`https://goals-achieve.onrender.com/auth/sign_in`, {
         email: 'guest@example.com',
         password: 'guests',
-        },
-        {
-          withCredentials: true
         }
       )
       if (!this.error) {
