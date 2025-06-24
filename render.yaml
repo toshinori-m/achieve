@@ -1,0 +1,13 @@
+databases:
+  - name: databases_goals_achieve
+    databaseName: goals_achieve_db
+    user: goals_achieve_user
+    region: singapore
+    plan: free
+
+services:
+  - type: web
+    name: backend_goals_achieve
+    runtime: ruby
+    region: singapore
+    plan: free
