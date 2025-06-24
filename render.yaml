@@ -11,3 +11,4 @@ services:
     runtime: ruby
     region: singapore
     plan: free
+    
