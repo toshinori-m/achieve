@@ -6,11 +6,17 @@
 # Read more: https://github.com/cyu/rack-cors'
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://www.goals-achieve.click'
+    origins [
+      ENV['BRANCH_ORIGIN'],
+      ENV['FRONTEND_ORIGIN'],
+      'https://goals-achieve.click',
+      'https://www.goals-achieve.click'
+    ].compact
 
     resource '*',
              headers: :any,
              expose: %w[access-token expiry token-type uid client],
-             methods: %i[get post put patch delete options head]
+             methods: %i[get post put patch delete options head],
+             credentials: false
   end
 end

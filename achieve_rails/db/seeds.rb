@@ -1,9 +1,9 @@
 # ユーザーが存在しない場合に作成する
 user = User.first || User.create!(
-  uid: "dummy_uid",
-  email: "test@example.com",
-  password: "password123",
-  name: "テストユーザー"
+  uid: 'dummy_uid',
+  email: 'test@example.com',
+  password: 'password123',
+  name: 'テストユーザー'
 )
 
 3.times do |number|
