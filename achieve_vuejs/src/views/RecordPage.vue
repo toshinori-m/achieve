@@ -27,7 +27,7 @@
     methods: {
       async getRecord () {
         try {
-          const res = await axios.get(`https://goals-achieve.onrender.com/reports`, {
+          const res = await axios.get(`https://backend-goals-achieve.onrender.com/reports`, {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

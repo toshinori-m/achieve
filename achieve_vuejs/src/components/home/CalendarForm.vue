@@ -43,7 +43,7 @@ export default {
         document.getElementById('submit_btn').addEventListener('click', () => {
         window.location.href = 'http://goals-achieve.click/reports/new/?datepicker_value=' + datePicker.value;
         });
-        const res = await axios.get(`https://goals-achieve.onrender.com/reports`, {
+        const res = await axios.get(`https://backend-goals-achieve.onrender.com/reports`, {
           headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

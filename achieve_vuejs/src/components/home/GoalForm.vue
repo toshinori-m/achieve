@@ -23,7 +23,7 @@
     methods: {
       async getGoal () {
         try {
-          const res = await axios.get(`https://goals-achieve.onrender.com/goals`, {
+          const res = await axios.get(`https://backend-goals-achieve.onrender.com/goals`, {
             headers: {
             uid: window.localStorage.getItem('uid'),
             "access-token": window.localStorage.getItem('access-token'),

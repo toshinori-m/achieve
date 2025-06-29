@@ -35,7 +35,7 @@ export default {
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get(`https://goals-achieve.onrender.com/messages`, {
+        const res = await axios.get(`https://backend-goals-achieve.onrender.com/messages`, {
           headers: getItem
         })
         if (!res) {
