@@ -22,7 +22,7 @@ export default {
   methods: {
     async goal() {
       try {
-        const res = await axios.post('http://54.199.72.77:3000/goals',  {
+        const res = await axios.post('https://backend-goals-achieve.onrender.com/goals',  {
           aim: this.aim,
           'access-token': localStorage.getItem('access-token'),
           client: localStorage.getItem('client'),

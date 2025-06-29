@@ -42,7 +42,7 @@ export default {
     },
     async createLike (messageId) {
       try {
-        const res = await axios.post(`http://54.199.72.77:3000/messages/${messageId}/likes`, {},
+        const res = await axios.post(`https://backend-goals-achieve.onrender.com/messages/${messageId}/likes`, {},
           {
             headers: {
               uid: this.uid,
@@ -61,7 +61,7 @@ export default {
     },
     async deleteLike(likeId) {
       try {
-        const res = await axios.delete(`http://54.199.72.77:3000/likes/${likeId}`,
+        const res = await axios.delete(`https://backend-goals-achieve.onrender.com/likes/${likeId}`,
           {
             headers: {
               uid: this.uid,
