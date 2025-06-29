@@ -7,7 +7,12 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins [
+      ENV['BRANCH_ORIGIN'],
+      ENV['FRONTEND_ORIGIN'],
+      'https://goals-achieve.click',
+      'https://www.goals-achieve.click'
+    ].compact
 
     resource '*',
              headers: :any,
