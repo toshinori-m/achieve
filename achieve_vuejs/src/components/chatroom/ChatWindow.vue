@@ -26,8 +26,7 @@ export default {
   props: ['messages'],
   data () {
     return {
-      uid: localStorage.getItem('uid'),
-      error: null
+      uid: localStorage.getItem('uid')
     }
   },
   methods: {
@@ -35,7 +34,7 @@ export default {
       for (let i = 0; i < message.likes.length; i++) {
         const like = message.likes[i]
         if (like.email === this.uid) {
-          this.deleteLike(like.id)
+          this.deleteLike(like.id, message.id)
           return
         }
       }
@@ -70,23 +69,15 @@ export default {
               client: window.localStorage.getItem('client')
             }
           })
-        
-        if (!res) { 
+          
+        if (!res) {
           new Error('いいねを削除できませんでした')
         }
         this.$emit('connectCable')
       } catch (error) {
-        // eslint-disable-next-line
         console.log(error)
-      }      
+      }
     },
-    scrollToBottom () {
-      const element = this.$refs.messages
-      element.scrollTop = element.scrollHeight
-    }
-  },
-  mounted () {
-    this.scrollToBottom()
   }
 }
 </script>

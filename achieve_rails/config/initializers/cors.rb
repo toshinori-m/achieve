@@ -10,7 +10,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       ENV['BRANCH_ORIGIN'],
       ENV['FRONTEND_ORIGIN'],
       'https://goals-achieve.click',
-      'https://www.goals-achieve.click'
+      'https://www.goals-achieve.click',
+      'https://backend-goals-achieve.onrender.com'
     ].compact
 
     resource '*',

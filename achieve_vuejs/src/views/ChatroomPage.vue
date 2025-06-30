@@ -14,7 +14,6 @@ import axios from 'axios'
 import ActionCable from 'actioncable'
 import { formatDistanceToNow } from 'date-fns'
 import { ja } from 'date-fns/locale'
-import getItem from '../auth/getItem'
 
 export default {
   components: { Navbar, ChatWindow, NewChatForm },
@@ -31,20 +30,23 @@ export default {
         return { ...message, created_at: time }
       })
     }
-  }, 
+  },  
   methods: {
     async getMessages () {
       try {
         const res = await axios.get(`https://backend-goals-achieve.onrender.com/messages`, {
-          headers: getItem
+          headers: {
+            uid: window.localStorage.getItem('uid'),
+            "access-token": window.localStorage.getItem('access-token'),
+            client:window.localStorage.getItem('client')
+          }
         })
         if (!res) {
           new Error('メッセージ一覧を取得できませんでした')
         }
         this.messages = res.data
       } catch (err) {
-        // eslint-disable-next-line
-        console.log(err)
+        this.error = 'メッセージ一覧を取得できませんでした'
       }
     },
     connectCable (message) {
@@ -54,22 +56,18 @@ export default {
       })
     }
   },
-  mounted() {
-    const cable = ActionCable.createConsumer("wss://goals-achieve.onrender.com/cable")
+  mounted () {
+    const cable = ActionCable.createConsumer('wss://backend-goals-achieve.onrender.com/cable')
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
-        this.getMessages().then(() => {
-          this.$refs.chatWindow.scrollToBottom()
-        })
+        this.getMessages()
       },
       received: () => {
-        this.getMessages().then(() => {
-          this.$refs.chatWindow.scrollToBottom()
-        })
+        this.getMessages()
       }
     })
   },
-  beforeUnmount () { 
+  beforeUnmount () {
     this.messageChannel.unsubscribe()
   }
 }

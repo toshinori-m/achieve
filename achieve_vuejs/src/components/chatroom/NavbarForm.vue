@@ -10,7 +10,6 @@
 
 <script>
 import axios from 'axios'
-import removeItem from '../../auth/removeItem'
 
 export default {
   data () {
@@ -31,13 +30,23 @@ export default {
             client: window.localStorage.getItem('client')
           }
         })
+
         if (!res) {
           new Error('ログアウトできませんでした')
         }
+
         if (!this.error) {
-          removeItem()
-          this.$router.push({ name: 'WelcomePage' })
+          console.log("ログアウトしました")
+          window.localStorage.removeItem('access-token')
+          window.localStorage.removeItem('client')
+          window.localStorage.removeItem('uid')
+          window.localStorage.removeItem('name')
+
+          this.$router.push({ name: 'Welcome' })
         }
+
+        this.error = null
+
         return res
       } catch (error) {
         this.error = 'ログアウトできませんでした'
