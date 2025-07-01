@@ -57,7 +57,7 @@ export default {
     }
   },
   mounted () {
-    const cable = ActionCable.createConsumer(`${process.env.VUE_APP_API_BASE_URL}/cable`)
+    const cable = ActionCable.createConsumer(`${process.env.VUE_APP_CABLE_URL}/cable`)
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
         this.getMessages()
