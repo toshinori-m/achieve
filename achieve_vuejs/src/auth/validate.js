@@ -10,7 +10,7 @@ const validate = async () => {
   const accessToken = window.localStorage.getItem('access-token')
 
   try {
-    const res = await axios.get(`https://backend-goals-achieve.onrender.com/auth/validate_token`, {
+    const res = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/auth/validate_token`, {
       headers: {
         uid: uid,
         'access-token': accessToken,

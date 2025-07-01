@@ -54,7 +54,7 @@
     methods: {
       async reports() {
         try {
-          const res = await axios.post(`https://backend-goals-achieve.onrender.com/reports`, {
+          const res = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/reports`, {
             datepicker_value: this.datepicker_value,
             location: this.location, 
             time: this.time, 

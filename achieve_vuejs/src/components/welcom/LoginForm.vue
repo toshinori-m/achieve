@@ -7,13 +7,6 @@
       <div class="error">{{ error }}</div>
       <button class="ok_button">ログインする</button>
     </form>
-    <form class= "w-80 my-5 mx-auto" @submit.prevent="loginWithGestUser">
-      <button class="ok_button">ゲストログイン</button>
-      <ul class="Guest">
-        <li>↑</li>
-        <li>（あらかじめゲストユーザーを作成し、その情報でログイン）</li>
-      </ul>
-    </form>
   </div>
 </template>
 
@@ -34,7 +27,7 @@ export default {
     async login() {
       try {
         this.error = null
-        const res = await axios.post(`https://backend-goals-achieve.onrender.com/auth/sign_in`, {
+        const res = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/auth/sign_in`, {
           email: this.email,
           password: this.password,
           }
@@ -50,19 +43,6 @@ export default {
       } catch (error) {
         this.error = 'メールアドレスかパスワードが違います'
       }
-    },
-    async loginWithGestUser() {
-      this.error = null
-      const res = await axios.post(`https://backend-goals-achieve.onrender.com/auth/sign_in`, {
-        email: 'guest@example.com',
-        password: 'guests',
-        }
-      )
-      if (!this.error) {
-        setItem(res.headers, res.data.data.name)
-        this.$emit('redirectToHome')
-      }
-      return res
     }
   }
 }
