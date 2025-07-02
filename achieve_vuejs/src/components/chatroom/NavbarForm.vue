@@ -10,7 +10,6 @@
 
 <script>
 import axios from 'axios'
-import removeItem from '../../auth/removeItem'
 
 export default {
   data () {
@@ -24,20 +23,30 @@ export default {
     async logout () {
       this.error = null
       try {
-        const res = await axios.delete('http://54.199.72.77:3000/auth/sign_out', {
+        const res = await axios.delete(`${process.env.VUE_APP_API_BASE_URL}/auth/sign_out`, {
           headers: {
             uid: this.email,
             "access-token": window.localStorage.getItem('access-token'),
             client: window.localStorage.getItem('client')
           }
         })
+
         if (!res) {
           new Error('ログアウトできませんでした')
         }
+
         if (!this.error) {
-          removeItem()
-          this.$router.push({ name: 'WelcomePage' })
+          console.log("ログアウトしました")
+          window.localStorage.removeItem('access-token')
+          window.localStorage.removeItem('client')
+          window.localStorage.removeItem('uid')
+          window.localStorage.removeItem('name')
+
+          this.$router.push({ name: 'Welcome' })
         }
+
+        this.error = null
+
         return res
       } catch (error) {
         this.error = 'ログアウトできませんでした'

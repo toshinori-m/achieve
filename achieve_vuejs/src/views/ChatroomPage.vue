@@ -14,7 +14,6 @@ import axios from 'axios'
 import ActionCable from 'actioncable'
 import { formatDistanceToNow } from 'date-fns'
 import { ja } from 'date-fns/locale'
-import getItem from '../auth/getItem'
 
 export default {
   components: { Navbar, ChatWindow, NewChatForm },
@@ -31,20 +30,23 @@ export default {
         return { ...message, created_at: time }
       })
     }
-  }, 
+  },  
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get('http://54.199.72.77:3000/messages', {
-          headers: getItem
+        const res = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/messages`, {
+          headers: {
+            uid: window.localStorage.getItem('uid'),
+            "access-token": window.localStorage.getItem('access-token'),
+            client:window.localStorage.getItem('client')
+          }
         })
         if (!res) {
           new Error('メッセージ一覧を取得できませんでした')
         }
         this.messages = res.data
       } catch (err) {
-        // eslint-disable-next-line
-        console.log(err)
+        this.error = 'メッセージ一覧を取得できませんでした'
       }
     },
     connectCable (message) {
@@ -54,22 +56,18 @@ export default {
       })
     }
   },
-  mounted() {
-    const cable = ActionCable.createConsumer('ws://54.199.72.77:3000/cable')
+  mounted () {
+    const cable = ActionCable.createConsumer(`${process.env.VUE_APP_CABLE_URL}/cable`)
     this.messageChannel = cable.subscriptions.create('RoomChannel', {
       connected: () => {
-        this.getMessages().then(() => {
-          this.$refs.chatWindow.scrollToBottom()
-        })
+        this.getMessages()
       },
       received: () => {
-        this.getMessages().then(() => {
-          this.$refs.chatWindow.scrollToBottom()
-        })
+        this.getMessages()
       }
     })
   },
-  beforeUnmount () { 
+  beforeUnmount () {
     this.messageChannel.unsubscribe()
   }
 }

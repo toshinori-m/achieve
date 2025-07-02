@@ -54,7 +54,7 @@
     methods: {
       async reports() {
         try {
-          const res = await axios.post('http://54.199.72.77:3000/reports', {
+          const res = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/reports`, {
             datepicker_value: this.datepicker_value,
             location: this.location, 
             time: this.time, 
