@@ -13,9 +13,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": [
-      "webpack-env", "jest"
-    ],
+    "types": ["webpack-env", "jest", "node"],
     "paths": {
       "~/*": ["./*"],
       "/@/*": ["src/*"]
@@ -32,7 +30,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "api/**/*.ts"
   ],
   "exclude": [
     "node_modules"
