@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :reports, only: %w[new create index]
   # resources :guests, only: ['create']
   resources :guests, only: [:create]
+  get 'ping', to: 'ping#index'
 end
