@@ -5,6 +5,8 @@ on:
     branches:
       - master
   pull_request:
+  schedule:
+    - cron: '0 0 * * 0'
 
 jobs:
   rspec:
@@ -89,3 +91,10 @@ jobs:
           eval $(ssh-agent)
           ssh-add ~/.ssh/Achieve-docker-ec2
           ssh -o StrictHostKeyChecking=no -A webapp@${{ secrets.TARGET_HOSTNAME }} "cd Achieve && git pull origin master && docker-compose restart"
+
+  ping:
+    name: Weekly Redis Ping
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send ping request to Redis endpoint
+        run: curl -s https://backend-goals-achieve.onrender.com/ping
